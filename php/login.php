@@ -7,6 +7,7 @@
 <body>
     <div>
         <h4>Hola</h4>
+        <h1>Graficos</h1>
     </div>
 </body>
 </html>
