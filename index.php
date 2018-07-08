@@ -1,3 +1,7 @@
+
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,11 +13,11 @@
 <body>
     <div id="iz">
         <div class="form-login">
-            <form action="php/login.php" method="post">
+            <form action="validarLogin.php" method="post">
                 <h4>Inicio de Sesión</h4>
-                <input type="text" name="user" placeholder="Usuario">
-                <input type="text" name="contra" placeholder="Contraseña">
-                <input type="submit" value="LOGIN">
+                <input type="text" name="user" placeholder="Usuario" id="user">
+                <input type="text" name="password" placeholder="Contraseña" id="password">
+                <input type="submit" name="Submit" value="LOGIN">
             </form>
         </div>
     </div>
