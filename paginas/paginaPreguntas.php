@@ -8,8 +8,35 @@
 </head>
 <body>
     <div class="barra">    
-        <h4>Emanuel</h4>
+        <h4>Usuario</h4>
         <hr>
+        <div class="menu">
+            <a href="#">Crear usuario</a>
+            <a href="#">Ver usuarios</a>
+        </div>
+        <div class="salirSesion">
+            <a href="../index.php">Salir</a>
+        </div>
+        <div class="espacioLogo">
+            <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
+        </div>
+    </div>
+    <div class="placePreguntas">
+        <h2>Preguntas</h2>
+        <form action="">
+            <h4>Que prefieres comer:</h4>
+            <input type="radio" name="seafood" value="ceviche">Ceviche<br>
+            <input type="radio" name="seafood" value="encebollado">Encebollado<br>
+
+            <h4>Que prefieres comer:</h4>
+            <input type="radio" name="vegeocarne" value="ensalada">Ensalada<br>
+            <input type="radio" name="vegeocarne" value="burguer">Hamburguesa<br>
+            
+            <h4>Que prefieres comer:</h4>
+            <input type="radio" name="tortaoempa" value="torta">Torta<br>
+            <input type="radio" name="tortaoempa" value="empanada">Empanada<br>
+            <button>Enviar</button>
+        </form>
     </div>
 </body>
 </html>
