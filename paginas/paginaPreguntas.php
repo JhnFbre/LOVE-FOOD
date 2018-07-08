@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>LOVE FOOD</title>
+    <link rel="stylesheet" href="../css/estilosPreguntas.css">
+    <link rel="icon" href="../images/logoPesta%C3%B1a.png">
 </head>
 <body>
-    <div>
-        <h4>Aqui irá la pagina con las preguntas ..</h4>
-       
+    <div class="barra">    
+        <h4>Emanuel</h4>
     </div>
 </body>
 </html>

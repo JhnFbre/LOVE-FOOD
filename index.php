@@ -12,6 +12,7 @@
 </head>
 <body>
     <div id="iz">
+        <img src="images/logoPesta%C3%B1a.png" alt="Logo corazon LOVEFOOD" id="cora-movil">
         <div class="form-login">
             <form action="validarLogin.php" method="post">
                 <h4>Inicio de Sesión</h4>
