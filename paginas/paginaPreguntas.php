@@ -9,6 +9,7 @@
 <body>
     <div class="barra">    
         <h4>Emanuel</h4>
+        <hr>
     </div>
 </body>
 </html>
