@@ -1,3 +1,7 @@
+<?php
+session_start();
+  $nombre=$_GET["Nombre"];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,12 +11,16 @@
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
 </head>
 <body>
-    <div class="barra">    
-        <h4>Usuario</h4>
+    <div class="barra">  
+       <?php  
+    echo '<h4>'.$nombre.'</h4>'
+            ?>
         <hr>
-        <div class="menu">
-            <a href="#">Crear usuario</a>
-            <a href="#">Ver usuarios</a>
+        
+  
+           <div class="menu">
+            <a href="nuevoUsuario.php?Nombre=". nombre(). "">Crear usuario</a>
+           <a href="#">Ver Usuarios</a>
         </div>
         <div class="salirSesion">
             <a href="../index.php">Salir</a>

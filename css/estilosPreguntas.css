@@ -55,7 +55,8 @@ a{
 }
 .placePreguntas{
     position: absolute;
-    margin-left: 300px;
+    margin-left: 350px;
+    margin-top: 0 auto;
 }
 .placePreguntas a, .placePreguntas h2, .placePreguntas h4{
     color: #555 !important;
@@ -93,3 +94,18 @@ button:hover{
     background: #fcc;
     transition: all 0.6s ease;
 }
+
+.centrar{
+    text-align: center;
+}
+
+.botonCrear{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 8px;
+    border: 2px solid #0016b0;
+  }

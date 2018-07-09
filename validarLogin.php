@@ -24,7 +24,7 @@ $PersonaCollectorObj = new PersonaCollector();
                 $_SESSION['usuario']= $usuario;
                 $_SESSION['clave']= $clave;
                  
-		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginas/paginaPreguntas.php'>";
+		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginas/paginaPreguntas.php?Nombre=". $c->getNombre(). "'>";
                 
             }
         }
