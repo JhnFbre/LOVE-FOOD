@@ -17,7 +17,7 @@
             <form action="validarLogin.php" method="post">
                 <h4>Inicio de Sesión</h4>
                 <input type="text" name="user" placeholder="Usuario" id="user">
-                <input type="text" name="password" placeholder="Contraseña" id="password">
+                <input type="password" name="password" placeholder="Contraseña" id="password">
                 <input type="submit" name="Submit" value="LOGIN">
             </form>
         </div>
