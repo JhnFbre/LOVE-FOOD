@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="css/estilosIndex.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="icon" href="images/logoPesta%C3%B1a.png">
 </head>
 <body>

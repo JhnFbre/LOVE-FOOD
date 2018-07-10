@@ -34,6 +34,7 @@
 }
 .menu a:hover{
     color: #922;
+    text-decoration: none;
     transition: all 0.6s ease;
 }
 .logoB{
@@ -49,7 +50,7 @@ hr{
 }
 a{
     display: block;
-    color: #eee;
+    color: #eee !important;
     margin: 0 15px;
     text-decoration: none;
 }
@@ -76,11 +77,12 @@ a{
     margin-top: 30px;
 }
 a:hover{
-    color: #aaa;    
+    color: #aaa !important;
+    text-decoration: none;
 }
 
 button{
-    margin-top: 25px;    
+    margin-top: 30px !important;    
     padding: 10px;
     background: #fff;
     border-color: #922;
@@ -109,3 +111,32 @@ button:hover{
     border-radius: 8px;
     border: 2px solid #0016b0;
   }
+@media only screen and (max-width: 740px) {
+    .logoB{
+        display: none;
+    }
+    .barra{
+        position: absolute;
+        width: 100%;
+        margin-bottom: 15px;
+        padding-top: 0;
+        height: 300px;
+    }
+    .placePreguntas, .placePreguntas h2, .placePreguntas h4{
+        padding-left: 0px !important;
+        
+    }
+    .placePreguntas h2{
+        margin-bottom: -20px;
+    }
+    .placePreguntas h4{
+        margin-top: 15px;
+    }
+    .placePreguntas{
+        margin-left: 0 !important;
+        margin-top: 350px;
+        display: block;
+        position: absolute;
+        width: 100%;
+    }
+}
