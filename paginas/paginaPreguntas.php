@@ -41,8 +41,7 @@ $apellido = $_SESSION['apellido'];
 <body>
     <div class="barra">  
        <?php  
-        echo '<h4>'.$user.'</h4>'
-            ?>
+        echo '<h4>' . $nombre . '</h4>'?>
         <hr>
         <div class="menu">
             <a href="nuevoUsuario.php">Crear usuario</a>
@@ -66,203 +65,203 @@ $apellido = $_SESSION['apellido'];
             <h4>Preferencia</h4>
             <div class="row">
                 <div class="col-md-6">
-                <input type="radio" name="preferencia" value="hombre">Hombre<br>
+                <input type="radio" name="preferencia" value="hombre" required>Hombre<br>
                 </div>
                 <div class="col-md-6">
-                <input type="radio" name="preferencia" value="mujer">Mujer<br>
+                <input type="radio" name="preferencia" value="mujer" required>Mujer<br>
                 </div>
             </div>
             <h4>Desayuno Salado</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="desayunosalado" value="bollo">Bollo<br>
+                    <input type="radio" name="desayunosalado" value="bollo" required>Bollo<br>
                 </div>
                 <div class="col-md-4">
-                    <input type="radio" name="desayunosalado" value="bolon">Bolón<br>
+                    <input type="radio" name="desayunosalado" value="bolon" required>Bolón<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="desayunosalado" value="empanada">Empanada<br>
+                    <input type="radio" name="desayunosalado" value="empanada" required>Empanada<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="desayunosalado" value="patacones">Patacones<br>
+                    <input type="radio" name="desayunosalado" value="patacones" required>Patacones<br>
                 </div>
                 <div class="col-md-4">
-                    <input type="radio" name="desayunosalado" value="tigrillo">Tigrillo<br>
+                    <input type="radio" name="desayunosalado" value="tigrillo" required>Tigrillo<br>
                 </div>
             </div>
             <h4>Desayuno Dulce</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="radio" name="desayunodulce" value="waffles">Waffles<br>
+                    <input type="radio" name="desayunodulce" value="waffles" required>Waffles<br>
                 </div>
                 <div class="col-md-6">    
-                    <input type="radio" name="desayunodulce" value="panqueques">Panqueques<br>
+                    <input type="radio" name="desayunodulce" value="panqueques" required>Panqueques<br>
                 </div>
                 <div class="col-md-6">    
-                    <input type="radio" name="desayunodulce" value="cereal">Cereal<br>
+                    <input type="radio" name="desayunodulce" value="cereal" required>Cereal<br>
                 </div>
                 <div class="col-md-6">    
-                    <input type="radio" name="desayunodulce" value="galletas">Galletas<br>
+                    <input type="radio" name="desayunodulce" value="galletas" required>Galletas<br>
                 </div>
             </div>
             
             <h4>Almuerzo</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="almuerzo" value="yapingacho">Yapingacho<br>
+                    <input type="radio" name="almuerzo" value="yapingacho" required>Yapingacho<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="almuerzo" value="pescadomariscos">Pescado y mariscos<br>
+                    <input type="radio" name="almuerzo" value="pescadomariscos" required>Pescado y mariscos<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="almuerzo" value="secopollo">Seco de Pollo<br>
+                    <input type="radio" name="almuerzo" value="secopollo" required>Seco de Pollo<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="almuerzo" value="arrozmenestracarne">Arroz con menestra y carne<br>
+                    <input type="radio" name="almuerzo" value="arrozmenestracarne" required>Arroz con menestra y carne<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="almuerzo" value="tallarines">Tallarines<br>
+                    <input type="radio" name="almuerzo" value="tallarines" required>Tallarines<br>
                 </div>
                 <div class="col-md-4">    
-                    <input type="radio" name="almuerzo" value="arrozpurecarne">Arroz con pure y carne<br>
+                    <input type="radio" name="almuerzo" value="arrozpurecarne" required>Arroz con pure y carne<br>
                 </div>
             </div>
             <h4>Cena</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="radio" name="cena" value="carne">Carnes<br>
+                    <input type="radio" name="cena" value="carne" required>Carnes<br>
                 </div>
                 <div class="col-md-6">        
-                    <input type="radio" name="cena" value="marisco">Mariscos<br>
+                    <input type="radio" name="cena" value="marisco" required>Mariscos<br>
                 </div>
                 <div class="col-md-6">        
-                    <input type="radio" name="cena" value="ensalada">Ensaladas<br>
+                    <input type="radio" name="cena" value="ensalada" required>Ensaladas<br>
                 </div>
                 <div class="col-md-6">        
-                    <input type="radio" name="cena" value="tegalleta">Té con galletas<br>
+                    <input type="radio" name="cena" value="tegalleta" required>Té con galletas<br>
                 </div>
             </div>
             <h4>Comidas Tipicas</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="comidatipica" value="encebollado">Encebollado<br>
+                    <input type="radio" name="comidatipica" value="encebollado" required>Encebollado<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="comidatipica" value="guatita">Guatita<br>
+                    <input type="radio" name="comidatipica" value="guatita" required>Guatita<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="comidatipica" value="fritada">Fritada<br>
+                    <input type="radio" name="comidatipica" value="fritada" required>Fritada<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="comidatipica" value="churrasco">Churrasco<br>
+                    <input type="radio" name="comidatipica" value="churrasco" required>Churrasco<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="comidatipica" value="yaguarlocro">Yaguarlocro<br>
+                    <input type="radio" name="comidatipica" value="yaguarlocro" required>Yaguarlocro<br>
                 </div>
             </div>
             <h4>Carnes</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="carnes" value="carnes">Carnes<br>
+                    <input type="radio" name="carnes" value="carnes" required>Carnes<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="carnes" value="pollo">Pollo<br>
+                    <input type="radio" name="carnes" value="pollo" required>Pollo<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="carnes" value="chuleta">Chuletas<br>
+                    <input type="radio" name="carnes" value="chuleta" required>Chuletas<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="carnes" value="costilla">Costillas<br>
+                    <input type="radio" name="carnes" value="costilla" required>Costillas<br>
                 </div>
                 <div class="col-md-4">     
-                    <input type="radio" name="carnes" value="embutido">Embutidos<br>
+                    <input type="radio" name="carnes" value="embutido" required>Embutidos<br>
                 </div>
             </div>
             
             <h4>Postres</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="postres" value="tiramisu">Tiramisú<br>
+                    <input type="radio" name="postres" value="tiramisu" required>Tiramisú<br>
                 </div>
                 <div class="col-md-4">        
-                    <input type="radio" name="postres" value="helado">Helado<br>
+                    <input type="radio" name="postres" value="helado" required>Helado<br>
                 </div>
                 <div class="col-md-4">        
-                    <input type="radio" name="postres" value="flan">Flan<br>
+                    <input type="radio" name="postres" value="flan" required>Flan<br>
                 </div>
                 <div class="col-md-4">        
-                    <input type="radio" name="postres" value="tortachocolate">Torta de Chocolate<br>
+                    <input type="radio" name="postres" value="tortachocolate" required>Torta de Chocolate<br>
                 </div>
                 <div class="col-md-4">        
-                    <input type="radio" name="postres" value="cheesecake">Cheesecake<br>
+                    <input type="radio" name="postres" value="cheesecake" required>Cheesecake<br>
                 </div>
                 <div class="col-md-4">        
-                    <input type="radio" name="postres" value="brownie">Brownies<br>
+                    <input type="radio" name="postres" value="brownie" required>Brownies<br>
                 </div>
             </div>
             <h4>Sabores Dulces</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="saboresdulces" value="chocolate">Chocolate<br>
+                    <input type="radio" name="saboresdulces" value="chocolate" required>Chocolate<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="saboresdulces" value="vainilla">Vainilla<br>
+                    <input type="radio" name="saboresdulces" value="vainilla" required>Vainilla<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="saboresdulces" value="fresa">Fresas<br>
+                    <input type="radio" name="saboresdulces" value="fresa" required>Fresas<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="saboresdulces" value="mora">Mora<br>
+                    <input type="radio" name="saboresdulces" value="mora" required>Mora<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="saboresdulces" value="rompasas">Rompasas<br>
+                    <input type="radio" name="saboresdulces" value="rompasas" required>Rompasas<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="saboresdulces" value="Chicle">Chicle<br>
+                    <input type="radio" name="saboresdulces" value="Chicle" required>Chicle<br>
                 </div>
             </div>
             <h4>Bebidas</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="radio" name="bebida" value="cafe">Café<br>
+                    <input type="radio" name="bebida" value="cafe" required>Café<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="jugonatural">Jugo Natural<br>
+                    <input type="radio" name="bebida" value="jugonatural" required>Jugo Natural<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="te">Té<br>
+                    <input type="radio" name="bebida" value="te" required>Té<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="vino">Vino<br>
+                    <input type="radio" name="bebida" value="vino" required>Vino<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="cocacola">Coca Cola<br>
+                    <input type="radio" name="bebida" value="cocacola" required>Coca Cola<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="agua">Agua<br>
+                    <input type="radio" name="bebida" value="agua" required>Agua<br>
                 </div>
                 <div class="col-md-4">      
-                    <input type="radio" name="bebida" value="cerveza">Cerveza<br>
+                    <input type="radio" name="bebida" value="cerveza" required>Cerveza<br>
                 </div>
             </div>
             <h4>Comidas Extranjeras</h4>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="radio" name="comidaextranjera" value="comidachina">Comida China<br>
+                    <input type="radio" name="comidaextranjera" value="comidachina" required>Comida China<br>
                 </div>
                 <div class="col-md-6">      
-                    <input type="radio" name="comidaextranjera" value="comidaitaliana">Comida Italiana<br>
+                    <input type="radio" name="comidaextranjera" value="comidaitaliana" required>Comida Italiana<br>
                 </div>
                 <div class="col-md-6">      
-                    <input type="radio" name="comidaextranjera" value="comidamexicana">Comida Mexicana<br>
+                    <input type="radio" name="comidaextranjera" value="comidamexicana" required>Comida Mexicana<br>
                 </div>
                 <div class="col-md-6">      
-                    <input type="radio" name="comidaextranjera" value="comidajaponesa">Comida Japonesa<br>
+                    <input type="radio" name="comidaextranjera" value="comidajaponesa" required>Comida Japonesa<br>
                 </div>
             </div>
-            <input class="enviarPrg" type="submit" value="Enviar" id="boton">
+            <button class="enviarPrg" type="submit" value="Enviar" id="boton">Enviar</button>
         </form>
-        
+
        
     </div>
     

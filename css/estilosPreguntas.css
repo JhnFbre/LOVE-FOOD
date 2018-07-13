@@ -276,7 +276,6 @@ button:hover{
     color: aquamarine;
 }
 .enviarPrg{
-    background: transparent;
     color:#c90000;
     border: 2px solid #c90000;
     width: 100px;
@@ -284,6 +283,5 @@ button:hover{
     padding: 10px 20px 10px 20px;
     border-bottom: 5px solid #a22;
     border-radius: 5px;
-    color:#c90000;
     font-size: 20px;
 }

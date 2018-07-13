@@ -97,4 +97,39 @@ form h4{
     }
     
 }
+.botonRegresar{
+    background-color: #449d44;
+    border-color: #398439;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-left: 600px;
+    font-family: sans-serif;
+    
+}
+.botonRegresar:Hover{
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    background-color: #ec971f;
+    border-color: #d58512;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    
+}
+
+h4{
+    margin-left: 500px;
+    text-align: center;
+    align-content: center;
+    font-family: sans-serif;
+}
+.row{
+    align-content: center;
+    text-align: center;
+}
 
