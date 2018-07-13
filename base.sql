@@ -9,12 +9,35 @@ CREATE TABLE usuario(
 );
 
 
+CREATE TABLE respuesta(
+	id serial NOT NULL,
+	usuario varchar(255),
+        rspPreferencia varchar(255),
+        rspDesayunoSalado varchar(255),
+        rspDesayunoDulce varchar(255),
+        rspAlmuerzo varchar(255),
+        rspCena varchar(255),
+        rspComidaTipica varchar(255),
+        rspCarnes varchar(255),
+        rspPostres varchar(255),
+        rspSaboresDulces varchar(255),
+        rspBebida varchar(255),
+        rspComidaExtranjera varchar(255),
+   	PRIMARY KEY (id)
+);
+
 INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
 ('Yander','Santana','ymsantan@espol.edu.ec','ymsantan','admin123');
 
 
 INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
-('Karla','Pico','kpico@espol.edu.ec','kpico','admin567');
+('Paola','Ortiz','gpaort@espol.edu.ec','gpaort','admin567');
 
 INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
 ('Paul','Valle','jpvalle@espol.edu.ec','jpvalle','admin123');
+
+
+INSERT INTO respuesta (usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ('$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera');
+
+
+    

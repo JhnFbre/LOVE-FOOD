@@ -1,13 +1,12 @@
 <?php
 session_start();
-  $nombre=$_GET["Nombre"];
+$nombre = $_SESSION['nombre'];
 ?>
 <?php
 include_once("modelo/persona/PersonaCollector.php");
 
 $PersonaCollectorObj = new PersonaCollector();
 ?>
-
 
 
 <!DOCTYPE html>
@@ -17,18 +16,26 @@ $PersonaCollectorObj = new PersonaCollector();
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+    <script type="text/javascript">
+        //auto expand textarea
+        function adjust_textarea(h) {
+            h.style.height = "20px";
+            h.style.height = (h.scrollHeight)+"px";
+        }
+    </script>
+    
 </head>
 <body>
     <div class="barra">  
        <?php  
-    echo '<h4>'.$nombre.'</h4>'
+        echo '<h4>'.$nombre.'</h4>'
             ?>
-        <hr> <div class="menu">
-           <a href="#">Ver usuarios</a>
+        <hr><div class="menu">
+           <a href="verUsuarios.php">Ver usuarios</a>
         </div>
         
         <div class="salirSesion">
-            <a href="../index.php">Salir</a>
+            <a href="../logout.php">Salir</a>
         </div>
         <div class="espacioLogo">
             <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
@@ -37,109 +44,41 @@ $PersonaCollectorObj = new PersonaCollector();
     
           
     <div class="centrar">
-               <br><br><br>
-                <h1>CREAR USUARIO</h1>
-                 <br>   
-                <form class="login" method="post" action="guardarUsuario.php">
-                     <br>
-        <br> 
-                    <label >Nombre </label>
-                    <input type="text" name="nombre" placeholder="Introduce tu nombre">
-                    <br><br>
-		    <label >Apellido </label>
-                    <input type="text" name="apellido" placeholder="Introduce tu apellido">
-                    <br><br>
-		    <label >Email </label>
-                    <input type="text" name="email" placeholder="Introduce tu email">
-                    <br> <br>
-		    <label >Usuario </label>
-                    <input type="text" name="usuario" placeholder="Introduce tu usuario">
-                    <br><br>
-		    <label >Clave </label>
-                    <input type="text" name="clave" placeholder="Introduce tu clave">
-                    <br><br>
-                    <button type="submit" class="botonCrear">Crear</button>
+                <br>
+                 <form class="login form-style-7" method="post" action="guardarUsuario.php">
+                    <ul>
+                    <li>
+                        <label for="name">Nombre</label>
+                        <input type="text" name="nombre" maxlength="100">
+                        <span>Introduce tu nombre</span>
+                    </li>
+                    <li>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" maxlength="100">
+                        <span>Introduce tu apellido</span>
+                    </li>
+                    <li>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" maxlength="100">
+                        <span>Introduce tu email</span>
+                    </li>
+                    <li>
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usuario" maxlength="100">
+                        <span>Introduce tu usuario</span>
+                    </li>
+                    <li>
+                        <label for="clave">Clave</label>
+                        <input type="text" name="clave" maxlength="100">
+                        <span>Introduce tu clave personal</span>
+                    </li>
+                    <li>
+                        <input type="submit" value="REGISTRAR" >
+                    </li>
+                    </ul>
+                </form> 
 
-                </form>
             </div>
    
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Nuevo Usuario </title>
-       
-</head>
-<body>
-    
-       <div class="container">
-        <br>
-        
-       
-       
-    <div class="contLogin">
-                <h1>CREAR USUARIO</h1>
-         <br>  
-                 <br>
-        <br>  
-                <form class="login" method="post" action="save_persona.php">
-                     <br>
-        <br> 
-                    <label >Nombre </label>
-                    <input type="text" name="nombre" placeholder="Introduce tu nombre">
-                    <br>
-		    <label >Apellido </label>
-                    <input type="text" name="apellido" placeholder="Introduce tu apellido">
-                    <br>
-		    <label >Email </label>
-                    <input type="text" name="email" placeholder="Introduce tu email">
-                    <br>
-		    <label >Usuario </label>
-                    <input type="text" name="usuario" placeholder="Introduce tu usuario">
-                    <br>
-		    <label >Clave </label>
-                    <input type="text" name="clave" placeholder="Introduce tu clave">
-                    <br>
-		    <label >Ruc </label>
-                    <input type="text" name="ruc" placeholder="Introduce tu ruc">
-                    <br>
-		
-		     
-                    
-                 
-		     
-                    <button type="submit">Crear</button>
-
-                </form>
-            </div>
-               </div>
-    
-    
- 
-    </body>
-   
 </html>

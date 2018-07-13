@@ -13,6 +13,13 @@ $PersonaCollectorObj = new PersonaCollector();
     <head>
         <title>Login</title>
         <meta charset="utf-8">
+        <style>
+            .divError{text-align: center}
+            .mensajeLoginError{
+                font-size: 30px;
+            }
+            img{width: 100px}
+        </style>
     </head>
     <body>
        
@@ -23,19 +30,21 @@ $PersonaCollectorObj = new PersonaCollector();
                
                 $_SESSION['usuario']= $usuario;
                 $_SESSION['clave']= $clave;
+                $_SESSION['nombre']= $c->getNombre();
+                $_SESSION['apellido']= $c->getApellido();
                  
-		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginas/paginaPreguntas.php?Nombre=". $c->getNombre(). "'>";
+		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginas/paginaPreguntas.php'>";
                 
             }
         }
-        if (!isset($_SESSION['user'])){
+        if (!isset($_SESSION['usuario'])){
         ?>
-            
-            <h4>Usuario o contraseña incorrecta</h4>
-            <a href="login.php"><button class="boton">Regresar</button></a>
-                
-        
-        <?php
+            <div class="divError">
+                <img src="images/logoPesta%C3%B1a.png" alt="">
+                <h4 class="mensajeLoginError">Usuario o contraseña incorrecta</h4>
+            </div>
+            <?php
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=index.php?Nombre=". $c->getNombre(). "'>";
              
         }
 		
