@@ -41,7 +41,7 @@ $apellido = $_SESSION['apellido'];
 <body>
     <div class="barra">  
        <?php  
-        echo '<h4>'.$nombre.'</h4>'
+        echo '<h4>'.$user.'</h4>'
             ?>
         <hr>
         <div class="menu">
