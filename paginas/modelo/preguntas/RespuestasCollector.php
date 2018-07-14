@@ -1,7 +1,7 @@
 <?php
 
 include_once('Respuestas.php');
-include_once("/var/www/html/LOVE-FOOD/paginas/modelo/collector.php");
+include_once("modelo/collector.php");
 
 class RespuestasCollector extends collector
 {
