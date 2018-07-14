@@ -15,7 +15,10 @@ $PersonaCollectorObj = new PersonaCollector();
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -33,7 +36,7 @@ $PersonaCollectorObj = new PersonaCollector();
         echo '<h4>'.$nombre.'</h4>'
             ?>
         <hr><div class="menu">
-           <a href="#">Ver usuarios</a>
+           <a href="nuevoUsuario.php">Crear Usuario</a>
         </div>
         
         <div class="salirSesion">
@@ -44,43 +47,44 @@ $PersonaCollectorObj = new PersonaCollector();
         </div>
     </div>
     
-          
-    <!--<div class="centrar">
-                <br>
-                 <form class="login form-style-7" method="post" action="guardarUsuario.php">
-                    <ul>
-                    <li>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="nombre" maxlength="100">
-                        <span>Introduce tu nombre</span>
-                    </li>
-                    <li>
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" maxlength="100">
-                        <span>Introduce tu apellido</span>
-                    </li>
-                    <li>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" maxlength="100">
-                        <span>Introduce tu email</span>
-                    </li>
-                    <li>
-                        <label for="usuario">Usuario</label>
-                        <input type="text" name="usuario" maxlength="100">
-                        <span>Introduce tu usuario</span>
-                    </li>
-                    <li>
-                        <label for="clave">Clave</label>
-                        <input type="text" name="clave" maxlength="100">
-                        <span>Introduce tu clave personal</span>
-                    </li>
-                    <li>
-                        <input type="submit" value="REGISTRAR" >
-                    </li>
-                    </ul>
-                </form> 
+    <div class="titulo"><h1>Lista de Usuarios</h1></div>
+   <div class="centrar2">
+     <table id="customers">
+                <tr>    
+                    <th class='IP'>ID</th>
+                    <th class='NO' >NOMBRE</th>
+                    <th class='AP'>APELLIDO</th>
+                    <th class='EM'>EMAIL</th>
+                    <th class='US'>USUARIO</th>
+                     <th class='CL'>CLAVE</th>
+                   
+                </tr>
+                <?php
+                    foreach ($PersonaCollectorObj->showPersonas() as $c){
+                    echo "<tr>";
+                    echo "<td class='IP'>" . $c->getIdPersona() . "</td>";
+                    echo "<td class='NO'>" . $c->getNombre() . "</td>";             
+                    echo "<td class='AP'>" . $c->getApellido() . "</td>";   
+                    echo "<td class='EM'>" . $c->getEmail() . "</td>";   
+                    echo "<td class='US'>" . $c->getUsuario() . "</td>";
+                    echo "<td class='CL'>" . $c->getClave() . "</td>";  
+                        
+                        
+                        
+                       /* echo "<td><a href='update_persona.php?ID=". $c->getIdPersona() ."&NM=". $c->getNombre() ."&AP=". $c->getApellido() ."&EM=". $c->getEmail() ."&US=". $c->getUsuario() ."&PS=". $c->getClave() ."'><button>Editar</button></a></td>";
 
-            </div>-->
+                    echo "<td><a href='delete_persona.php?ID=". $c->getIdPersona() ."'><button>Eliminar</button></a></td>";
+                    echo "</tr>"; */
+
+
+
+                }
+
+                ?>
+
+            </table>
+    </div>
+          
    
 </body>
 </html>

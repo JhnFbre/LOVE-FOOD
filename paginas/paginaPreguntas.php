@@ -2,7 +2,7 @@
 session_start();
 $nombre = $_SESSION['nombre'];
 $apellido = $_SESSION['apellido'];
-
+$usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,7 +43,7 @@ $apellido = $_SESSION['apellido'];
        <?php  
         echo '<h4>' . $nombre . '</h4>'?>
         <hr>
-        <div class="menu">
+        <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
            <a href="verUsuarios.php">Ver Usuarios</a>
         </div>
@@ -283,6 +283,17 @@ $apellido = $_SESSION['apellido'];
             $(this).css('animation-delay', '-'+i+'70ms');
           });
         });
+        
+        
+        $user="<?php echo $usuario;?>";
+        
+        validarUsuario();
+        function validarUsuario(){
+            if($user == "ymsantan" ||$user == "jpvalle"||$user =="gpaort"){
+                 $('#ocultar').css('display', 'block');
+                //$("#ocultar").css("display", "block");
+            }
+        }
         
     </script>
 </html>
