@@ -1,7 +1,7 @@
 <?php
 
 include_once('Persona.php');
-include_once("/var/www/html/LOVE-FOOD/paginas/modelo/collector.php");
+include_once("../collector.php");
 
 class PersonaCollector extends collector
 {
