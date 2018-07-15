@@ -25,7 +25,7 @@ class RespuestasCollector extends collector
     }*/
    
     function createRespuesta($idUsuario,$usuario, $rspPreferencia, $rspDesayunoSalado, $rspDesayunoDulce, $rspAlmuerzo,$rspCena,$rspComidaTipica,$rspCarnes,$rspPostres,$rspSaboresDulces,$rspBebida,$rspComidaExtranjera) {
-        $rows = self::$db->insertRow("INSERT INTO respuesta (idUsuario,usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ($idUsuario','$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera')",null);
+        $rows = self::$db->insertRow("INSERT INTO respuesta (idUsuario,usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ($idUsuario,'$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera')",null);
         
     }
 

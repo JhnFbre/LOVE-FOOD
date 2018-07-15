@@ -3,6 +3,7 @@ session_start();
 $nombre = $_SESSION['nombre'];
 $apellido = $_SESSION['apellido'];
 $usuario = $_SESSION['usuario'];
+$id = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -62,6 +63,7 @@ $usuario = $_SESSION['usuario'];
             
             <div><input type="hidden" name="nombre" value="<?php echo $nombre;?>"></div>
             <div><input type="hidden" name="apellido" value="<?php echo $apellido;?>"></div>
+            <div><input type="hidden" name="idusuario" value="<?php echo $id;?>"></div>
             
             <h4>Preferencia</h4>
             <div class="row">

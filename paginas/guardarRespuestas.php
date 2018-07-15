@@ -4,6 +4,7 @@ include_once("modelo/preguntas/RespuestasCollector.php");
 
 $usuario = $_POST['nombre'];
 $apellido = $_POST['apellido'];
+$idUs = $_POST['idusuario'];
 $preferencia = $_POST['preferencia'];
 $desayunosalado = $_POST['desayunosalado'];
 $desayunodulce = $_POST['desayunodulce'];
@@ -42,7 +43,7 @@ $RespuestasCollectorObj = new RespuestasCollector();
                 <?php
                       if (isset($_SESSION['usuario'])){
                          echo "<h4>Se guardaron sus respuestas  </h4>";
-                $RespuestasCollectorObj->createRespuesta($nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
+                $RespuestasCollectorObj->createRespuesta($idUs,$nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<a href='../nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
@@ -56,6 +57,6 @@ $RespuestasCollectorObj = new RespuestasCollector();
             
           </div>
 
-  
+  </div>
     </body>
 </html>

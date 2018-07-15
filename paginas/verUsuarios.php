@@ -54,19 +54,19 @@ $PersonaCollectorObj = new PersonaCollector();
                     <th class='IP'>ID</th>
                     <th class='NO' >NOMBRE</th>
                     <th class='AP'>APELLIDO</th>
-                    <th class='EM'>EMAIL</th>
+                    <th class='EM'>CONTACTO</th>
                     <th class='US'>USUARIO</th>
                      <th class='CL'>CLAVE</th>
                    
                 </tr>
                 <?php
                     foreach ($PersonaCollectorObj->showPersonas() as $c){
-                     print_r ($c);
+                    // print_r ($c);
                         echo "<tr>";
                     echo "<td class='IP'>" . $c->getIdPersona() . "</td>";
                     echo "<td class='NO'>" . $c->getNombre() . "</td>";             
                     echo "<td class='AP'>" . $c->getApellido() . "</td>";   
-                    echo "<td class='EM'>" . $c->getEmail() . "</td>";   
+                    echo "<td class='EM'>" . $c->getContacto() . "</td>";   
                     echo "<td class='US'>" . $c->getUsuario() . "</td>";
                     echo "<td class='CL'>" . $c->getClave() . "</td>";  
                         
