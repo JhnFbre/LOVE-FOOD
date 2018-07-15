@@ -37,6 +37,7 @@ class Respuestas
        $this->rspComidaExtranjera = $rspComidaExtranjera;
        
      }
+    
      function setId($id){
        $this->id = $id;
      } 

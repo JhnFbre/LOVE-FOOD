@@ -8,7 +8,9 @@ $id = $_SESSION['id'];
 <?php
 include_once("modelo/preguntas/RespuestasCollector.php");
 
+
 $RespuestasCollectorObj = new RespuestasCollector();
+
 
 ?>
 
@@ -120,6 +122,7 @@ $RespuestasCollectorObj = new RespuestasCollector();
                 </tr>
                 <?php
                     $arrayRespuestasTmp = array();  
+                    $arrayCoincidencias = array();
                     foreach ($RespuestasCollectorObj->showRespuestasLogeado($id) as $c){
                      // print_r ($c);
                     echo "<tr>";
@@ -139,6 +142,9 @@ $RespuestasCollectorObj = new RespuestasCollector();
                         echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
                         
                         echo "</tr>";
+        
+                            /*($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+                        */
                         
                         array_push($arrayRespuestasTmp, $c->getRspPreferencia());
                         array_push($arrayRespuestasTmp, $c->getRspDesayunoSalado());
@@ -151,11 +157,57 @@ $RespuestasCollectorObj = new RespuestasCollector();
                         array_push($arrayRespuestasTmp, $c->getRspSaboresDulces());
                         array_push($arrayRespuestasTmp, $c->getRspBebida());
                         array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
+                        
 
                 }
+         echo "</div>";
+         echo "</table>"; 
                 
-               echo "<h4>" . $arrayRespuestasTmp[0] . "</h4>";
+               //echo "<h4>Objeto " . $RespuestasLogeado->getId(). "</h4>";
+               echo "<h4 Arreglo >" . $arrayRespuestasTmp[0] . "</h4>";
+                foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                    if($arrayRespuestasTmp[0] == $c->getRspPreferencia() && 
+                       $arrayRespuestasTmp[1] == $c->getRspDesayunoSalado() &&
+                       $arrayRespuestasTmp[2] == $c->getRspDesayunoDulce() && 
+                       $arrayRespuestasTmp[3] == $c->getRspAlmuerzo() && 
+                       $arrayRespuestasTmp[4] == $c->getRspCena() && 
+                       $arrayRespuestasTmp[5] == $c->getRspComidaTipica() && 
+                       $arrayRespuestasTmp[6] == $c->getRspCarnes() && 
+                       $arrayRespuestasTmp[7] == $c->getRspPostres() && 
+                       $arrayRespuestasTmp[8] == $c->getRspSaboresDulces() && 
+                       $arrayRespuestasTmp[9] == $c->getRspBebida() && 
+                       $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
+                        //echo "Coinciden <br>";
+                        array_push($arrayCoincidencias, $c); 
+                    }else{
+                        //echo "No coinciden<br>";
+                        
+                    }
+                    
+                }
+         ?>
+                <div class ='titulo'><h1>¡Tus posibles parejas de comida ideal!</h1></div>
+                    <div class='centrar2'>
+                        <table id='customers'>
+                            <tr>
+                                
+                                <th>Nombre</th>
+                                <th>ID</th>
+                            </tr>
+            <?php
+                foreach ($arrayCoincidencias as $coincidencia){
+                    echo "<tr>";
+                    //echo "<td>". $contadorNro ."</td>";
+                    echo "<td>". $coincidencia->getUsuario() ."</td>";
+                    echo "<td>". $coincidencia->getIdUsuario() ."</td>";
+                    
+                    echo "</tr>";
+
+                    //echo "Esta persona tiene tus mismos gustos " . $coincidencia->getUsuario() ." con el ID: " . $coincidencia->getId(). "<br>";
+                }
                 ?>
+         </div>
+         </table> 
 
             </table>
     </div>

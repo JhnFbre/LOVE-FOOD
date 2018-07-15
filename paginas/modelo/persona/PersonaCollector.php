@@ -17,6 +17,17 @@ class PersonaCollector extends collector
     return $arrayPersona;        
   }
     
+    function showPersonasId($id) {
+    $rows = self::$db->getRows("SELECT * FROM usuario where id = " $id);        
+    ##echo "linea 1";
+    $arrayPersona= array();        
+    foreach ($rows as $c){
+      $aux = new Persona($c{'id'},$c{'nombre'},$c{'apellido'},$c{'contacto'},$c{'usuario'},$c{'clave'},$c{'sexo'});
+      array_push($arrayPersona, $aux);
+    }
+    return $arrayPersona;        
+  }
+    
     
     function deletePersona($id) {
         $rows = self::$db->deleteRow("DELETE FROM usuario WHERE id=$id",null);
