@@ -16,7 +16,7 @@ class PersonaCollector extends collector
     }
     return $arrayPersona;        
   }
-    
+    /*
     function showPersonasId($id) {
     $rows = self::$db->getRows("SELECT * FROM usuario where id = " $id);        
     ##echo "linea 1";
@@ -27,6 +27,7 @@ class PersonaCollector extends collector
     }
     return $arrayPersona;        
   }
+  */
     
     
     function deletePersona($id) {
