@@ -35,7 +35,7 @@ $PersonaCollectorObj = new PersonaCollector();
                         $PersonaCollectorObj->createPersona($nombre,$apellido,$contacto,$usuario,$clave,$sexo);
                           echo "</div>";
                           echo "<div class='row'>";
-                          echo "<a href='../nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
+                          echo "<a href='nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<img src='../images/corazones.gif' alt=''>";
