@@ -4,9 +4,10 @@ include_once("modelo/persona/PersonaCollector.php");
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
-$email = $_POST['email'];
+$contacto = $_POST['contacto'];
 $usuario = $_POST['usuario'];
 $clave = $_POST['clave'];
+$sexo = $_POST['sexo'];
 
 $PersonaCollectorObj = new PersonaCollector();
 ?>
@@ -31,7 +32,7 @@ $PersonaCollectorObj = new PersonaCollector();
                 <?php
                       if (isset($_SESSION['usuario'])){
                         echo "<h4>Se creó un nuevo lover </h4>";
-                        $PersonaCollectorObj->createPersona($nombre,$apellido,$email,$usuario,$clave);
+                        $PersonaCollectorObj->createPersona($nombre,$apellido,$contacto,$usuario,$clave,$sexo);
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<a href='../nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
@@ -43,6 +44,7 @@ $PersonaCollectorObj = new PersonaCollector();
                 ?>
                 
             
+          </div>
           </div>
     </body>
 </html>

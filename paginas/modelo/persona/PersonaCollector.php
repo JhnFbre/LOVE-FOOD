@@ -11,7 +11,7 @@ class PersonaCollector extends collector
     ##echo "linea 1";
     $arrayPersona= array();        
     foreach ($rows as $c){
-      $aux = new Persona($c{'id'},$c{'nombre'},$c{'apellido'},$c{'email'},$c{'usuario'},$c{'clave'},$c{'sexo'});
+      $aux = new Persona($c{'id'},$c{'nombre'},$c{'apellido'},$c{'contacto'},$c{'usuario'},$c{'clave'},$c{'sexo'});
       array_push($arrayPersona, $aux);
     }
     return $arrayPersona;        
@@ -21,8 +21,8 @@ class PersonaCollector extends collector
         $rows = self::$db->deleteRow("DELETE FROM usuario WHERE id=$id",null);
     }
    
-    function createPersona($nombre,$apellido,$email,$usuario,$clave,$sexo) {
-        $rows = self::$db->insertRow("INSERT INTO usuario (nombre,apellido,email,usuario,clave) VALUES ('$nombre', '$apellido','$email','$usuario','$clave','$sexo')",null);
+    function createPersona($nombre,$apellido,$contacto,$usuario,$clave,$sexo) {
+        $rows = self::$db->insertRow("INSERT INTO usuario (nombre,apellido,contacto,usuario,clave,sexo) VALUES ('$nombre', '$apellido','$contacto','$usuario','$clave','$sexo')",null);
         
     }
     

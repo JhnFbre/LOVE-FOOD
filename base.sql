@@ -11,8 +11,8 @@ CREATE TABLE usuario(
 
 
 CREATE TABLE respuesta(
-	idUser serial NOT NULL,
-	idusuario integer(255),
+	id serial NOT NULL,
+	idusuario integer,
 	usuario varchar(255),
         rspPreferencia varchar(255),
         rspDesayunoSalado varchar(255),
@@ -25,7 +25,7 @@ CREATE TABLE respuesta(
         rspSaboresDulces varchar(255),
         rspBebida varchar(255),
         rspComidaExtranjera varchar(255),
-   	PRIMARY KEY (idUser)
+   	PRIMARY KEY (id)
 );
 
 INSERT INTO usuario ( nombre,apellido,contacto,usuario,clave,sexo) VALUES
@@ -39,7 +39,7 @@ INSERT INTO usuario ( nombre,apellido,contacto,usuario,clave,sexo) VALUES
 ('Paul','Valle','jpvalle@espol.edu.ec','jpvalle','admin123','hombre');
 
 
-INSERT INTO respuesta (idusuario,usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ('$idusuario','$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera');
+INSERT INTO respuesta (idusuario,usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES (4,'$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera');
 
 
     

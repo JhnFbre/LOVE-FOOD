@@ -58,24 +58,31 @@ $PersonaCollectorObj = new PersonaCollector();
                         <span>Introduce tu apellido</span>
                     </li>
                     <li>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" maxlength="100">
-                        <span>Introduce tu email</span>
+                        <label for="contacto">Contacto</label>
+                        <input type="text" name="contacto" maxlength="100">
+                        <span>Ingresa tu número o facebook</span>
                     </li>
                     <li>
                         <label for="usuario">Usuario</label>
                         <input type="text" name="usuario" maxlength="100">
                         <span>Introduce tu usuario</span>
                     </li>
+                   
                     <li>
                         <label for="clave">Clave</label>
                         <input type="text" name="clave" maxlength="100">
                         <span>Introduce tu clave personal</span>
                     </li>
-                    <li>
-                        <input type="submit" value="REGISTRAR" >
+                  
+                        <li>
+                        <h4>Sexo</h4>
+                <input type="radio" name="sexo" value="hombre" required>Hombre<br>
+                <input type="radio" name="sexo" value="mujer" required>Mujer<br>
+                
                     </li>
+                        <input type="submit" value="REGISTRAR" >
                     </ul>
+                    
                 </form> 
 
             </div>
