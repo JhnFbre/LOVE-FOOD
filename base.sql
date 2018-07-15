@@ -2,15 +2,17 @@ CREATE TABLE usuario(
 	id serial NOT NULL,
 	nombre varchar(255),
         apellido varchar(255),
-        email varchar(255),
+        contacto varchar(255),
         usuario varchar(255),
         clave varchar(255),
+        sexo varchar(255),
    	PRIMARY KEY (id)
 );
 
 
 CREATE TABLE respuesta(
-	id serial NOT NULL,
+	idUser serial NOT NULL,
+	idusuario integer(255),
 	usuario varchar(255),
         rspPreferencia varchar(255),
         rspDesayunoSalado varchar(255),
@@ -23,21 +25,21 @@ CREATE TABLE respuesta(
         rspSaboresDulces varchar(255),
         rspBebida varchar(255),
         rspComidaExtranjera varchar(255),
-   	PRIMARY KEY (id)
+   	PRIMARY KEY (idUser)
 );
 
-INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
-('Yander','Santana','ymsantan@espol.edu.ec','ymsantan','admin123');
+INSERT INTO usuario ( nombre,apellido,contacto,usuario,clave,sexo) VALUES
+('Yander','Santana','ymsantan@espol.edu.ec','ymsantan','admin123','hombre');
 
 
-INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
-('Paola','Ortiz','gpaort@espol.edu.ec','gpaort','admin567');
+INSERT INTO usuario ( nombre,apellido,contacto,usuario,clave,sexo) VALUES
+('Paola','Ortiz','gpaort@espol.edu.ec','gpaort','admin567','mujer');
 
-INSERT INTO usuario ( nombre,apellido,email,usuario,clave) VALUES
-('Paul','Valle','jpvalle@espol.edu.ec','jpvalle','admin123');
+INSERT INTO usuario ( nombre,apellido,contacto,usuario,clave,sexo) VALUES
+('Paul','Valle','jpvalle@espol.edu.ec','jpvalle','admin123','hombre');
 
 
-INSERT INTO respuesta (usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ('$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera');
+INSERT INTO respuesta (idusuario,usuario,rspPreferencia,rspDesayunoSalado,rspDesayunoDulce,rspAlmuerzo,rspCena,rspComidaTipica,rspCarnes,rspPostres,rspSaboresDulces,rspBebida,rspComidaExtranjera) VALUES ('$idusuario','$usuario', '$rspPreferencia','$rspDesayunoSalado','$rspDesayunoDulce','$rspAlmuerzo','$rspCena','$rspComidaTipica','$rspCarnes','$rspPostres','$rspSaboresDulces','$rspBebida','$rspComidaExtranjera');
 
 
     

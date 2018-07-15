@@ -5,18 +5,20 @@ class Persona
     private $idPersona;
     private $nombre;
     private $apellido;
-    private $email;
+    private $contacto;
     private $usuario;
     private $clave;
+    private $sexo;
     
     
-     function __construct($idPersona, $nombre, $apellido, $email, $usuario, $clave) {
+     function __construct($idPersona, $nombre, $apellido, $contacto, $usuario, $clave,$sexo) {
        $this->idPersona = $idPersona;
        $this->nombre = $nombre;
        $this->apellido = $apellido;
-       $this->email = $email;
+       $this->contacto = $contacto;
        $this->usuario = $usuario;
        $this->clave = $clave;
+       $this->sexo = $sexo;
        
      }
     
@@ -40,11 +42,11 @@ class Persona
        return $this->apellido;
      } 
     
-     function setEmail($email){
-       $this->email = $email;
+     function setContacto($contacto){
+       $this->contacto = $contacto;
      } 
-     function getEmail(){
-       return $this->email;
+     function getContacto(){
+       return $this->contacto;
      } 
 
      function setUsuario($usuario){
@@ -59,6 +61,13 @@ class Persona
      } 
      function getClave(){
        return $this->clave;
+     } 
+    
+     function setSexo($sexo){
+       $this->sexo = $sexo;
+     } 
+     function getSexo(){
+       return $this->sexo;
      } 
     
 }

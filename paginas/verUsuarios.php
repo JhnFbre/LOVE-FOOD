@@ -61,7 +61,8 @@ $PersonaCollectorObj = new PersonaCollector();
                 </tr>
                 <?php
                     foreach ($PersonaCollectorObj->showPersonas() as $c){
-                    echo "<tr>";
+                     print_r ($c);
+                        echo "<tr>";
                     echo "<td class='IP'>" . $c->getIdPersona() . "</td>";
                     echo "<td class='NO'>" . $c->getNombre() . "</td>";             
                     echo "<td class='AP'>" . $c->getApellido() . "</td>";   
