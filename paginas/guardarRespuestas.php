@@ -4,7 +4,7 @@ include_once("modelo/preguntas/RespuestasCollector.php");
 
 $usuario = $_POST['nombre'];
 $apellido = $_POST['apellido'];
-$idUs = $_POST['idusuario'];
+$idusuario = $_POST['idusuario'];
 $preferencia = $_POST['preferencia'];
 $desayunosalado = $_POST['desayunosalado'];
 $desayunodulce = $_POST['desayunodulce'];
@@ -39,11 +39,11 @@ $RespuestasCollectorObj = new RespuestasCollector();
     <body>
        <div class="container">
             <div class="row">
-               <img src="../images/logo.png" alt="">
+               <img src="../images/logoPng.png" alt="">
                 <?php
                       if (isset($_SESSION['usuario'])){
                          echo "<h4>Se guardaron sus respuestas  </h4>";
-                $RespuestasCollectorObj->createRespuesta($idUs,$nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
+                $RespuestasCollectorObj->createRespuesta($idusuario,$usuario,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<a href='paginaPreguntas.php' class = 'botonRegresar'>Regresar </a>";

@@ -17,6 +17,7 @@ class PersonaCollector extends collector
     return $arrayPersona;        
   }
     
+    
     function deletePersona($id) {
         $rows = self::$db->deleteRow("DELETE FROM usuario WHERE id=$id",null);
     }

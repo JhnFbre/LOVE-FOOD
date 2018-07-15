@@ -11,7 +11,19 @@ class RespuestasCollector extends collector
     ##echo "linea 1";
     $arrayRespuestas= array();        
     foreach ($rows as $c){
-      $aux = new Respuestas($c{'id'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+      $aux = new Respuestas($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+      array_push($arrayRespuestas, $aux);
+    }
+    return $arrayRespuestas;     
+       
+  }
+    
+    function showRespuestasLogeado($idusario) {
+    $rows = self::$db->getRows("SELECT * FROM respuesta where idusuario = " . $idusario );        
+    ##echo "linea 1";
+    $arrayRespuestas= array();        
+    foreach ($rows as $c){
+      $aux = new Respuestas($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
       array_push($arrayRespuestas, $aux);
     }
     return $arrayRespuestas;     

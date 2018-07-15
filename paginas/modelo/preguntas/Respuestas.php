@@ -53,7 +53,6 @@ class Respuestas
        $this->usuario = $usuario;
      } 
      function getUsuario(){
-         echo $this->usuario;
        return $this->usuario;
      }   
     function getsomething(){
