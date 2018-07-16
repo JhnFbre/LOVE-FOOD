@@ -30,7 +30,8 @@ $RespuestasCollectorObj = new RespuestasCollector();
         <title>LOVE FOOD</title>
         <link rel="stylesheet" href="../css/estilosIndex.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/estilosGuardarRespuesta.css">
+        <link rel="stylesheet" href="../css/estilosPreguntas.css">
+          <link rel="stylesheet" href="../css/estilo2.css">
         <link rel="icon" href="../images/logoPesta%C3%B1a.png">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -47,7 +48,7 @@ $RespuestasCollectorObj = new RespuestasCollector();
                 $RespuestasCollectorObj->createRespuesta($idUs,$nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
                           echo "</div>";
                           echo "<div class='row'>";
-                          echo "<a href='paginaPreguntas.php' class = 'botonRegresar'>Regresar </a>";
+                          echo "<a href='../nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<img src='../images/corazones.gif' class='resGif' alt=''>";

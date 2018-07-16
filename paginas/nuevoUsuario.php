@@ -19,6 +19,7 @@ if (!isset($_SESSION['usuario'])){
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+      <link rel="stylesheet" href="../css/estilo2.css">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
