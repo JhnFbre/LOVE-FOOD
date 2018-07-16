@@ -26,6 +26,7 @@ if (!isset($_SESSION['usuario'])){
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/estilo2.css">
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
@@ -129,7 +130,6 @@ if (!isset($_SESSION['usuario'])){
                     $arrayCoincidencias = array();
                     $arrayCoincidenciasPreguntas = array();
                     foreach ($RespuestasCollectorObj->showRespuestasLogeado($id) as $c){
-                   
                      // print_r ($c);
                     echo "<tr>";
                     echo "<td class='IP'>" . $c->getId(). "</td>";
@@ -148,7 +148,7 @@ if (!isset($_SESSION['usuario'])){
                         echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
                         
                         echo "</tr>";
-                    
+        
                             /*($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
                         */
                         
@@ -163,17 +163,16 @@ if (!isset($_SESSION['usuario'])){
                         array_push($arrayRespuestasTmp, $c->getRspSaboresDulces());
                         array_push($arrayRespuestasTmp, $c->getRspBebida());
                         array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
-                        array_push($arrayRespuestasTmp, $c->getIdUsuario());
                         
-                        
-                }
 
+                }
          echo "</div>";
          echo "</table>"; 
                 
                //echo "<h4>Objeto " . $RespuestasLogeado->getId(). "</h4>";
                echo "<h4 Arreglo >" . $arrayRespuestasTmp[0] . "</h4>";
                 foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+<<<<<<< HEAD
                      $nroCoincidencias = 0;
                     if($arrayRespuestasTmp[11] != $c->getIdUsuario()){ //Valida que no sean las respuestas del usuario logeado
                         echo "contadorrrr " . $nroCoincidencias ."<br>";
@@ -227,6 +226,21 @@ if (!isset($_SESSION['usuario'])){
                         array_push($arrayCoincidencias, $c);
                         array_push($arrayCoincidenciasPreguntas, $nroCoincidencias);
                         echo "Posible pareja " .$c->getId()." con aciertos: " . $nroCoincidencias . "<br>";
+=======
+                    if($arrayRespuestasTmp[0] == $c->getRspPreferencia() && 
+                       $arrayRespuestasTmp[1] == $c->getRspDesayunoSalado() &&
+                       $arrayRespuestasTmp[2] == $c->getRspDesayunoDulce() && 
+                       $arrayRespuestasTmp[3] == $c->getRspAlmuerzo() && 
+                       $arrayRespuestasTmp[4] == $c->getRspCena() && 
+                       $arrayRespuestasTmp[5] == $c->getRspComidaTipica() && 
+                       $arrayRespuestasTmp[6] == $c->getRspCarnes() && 
+                       $arrayRespuestasTmp[7] == $c->getRspPostres() && 
+                       $arrayRespuestasTmp[8] == $c->getRspSaboresDulces() && 
+                       $arrayRespuestasTmp[9] == $c->getRspBebida() && 
+                       $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
+                        //echo "Coinciden <br>";
+                        array_push($arrayCoincidencias, $c); 
+>>>>>>> 4bcf3f1f217ace1a449676754d2292bc0a31505f
                     }else{
                         echo "No se encontraron coincidencias con este usuario = " . $c->getId() . "<br>";
                     }

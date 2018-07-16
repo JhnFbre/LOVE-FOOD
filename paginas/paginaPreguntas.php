@@ -1,6 +1,10 @@
 <?php
 session_start();
+include_once("modelo/preguntas/RespuestasCollector.php");
+$RespuestasCollectorObj = new RespuestasCollector();
 
+$b=$_SESSION['id'];;
+                    
 
        if (!isset($_SESSION['usuario'])){
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
@@ -10,6 +14,14 @@ session_start();
             $usuario = $_SESSION['usuario'];
             $id = $_SESSION['id'];
            //Contenido de la pagina
+           
+           foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                      print_r ($c->getIdUsuario());
+                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";  
+                        if  ($c->getIdUsuario() == $b) {
+                            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginaResultados.php'>";
+                        }
+                }
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +30,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
-    <link rel="stylesheet" href="../css/estilo.css">
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/estilo2.css">
     <link rel="icon" href="../images/logoPesta%C3%B1a.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -45,6 +57,25 @@ session_start();
         $("#boton").click(function () {	 
 			alert($('input:radio[name=desayunosalado]:checked').val());
 			});
+        
+        
+        validarRsp();
+        function validarRsp(){
+            alert("hbsjdbnjs");
+            <?php
+           $b=2;
+                    foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                     // print_r ($c);
+                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";  
+                        if  ($c->getIdUsuario() == $b) {
+                            echo "a es mayor que b";
+                        }else{
+                            echo "no entro";
+                        }
+                }
+
+                ?>
+        }
 		 
     </script>
 </head>
@@ -56,7 +87,7 @@ session_start();
         <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
            <a href="verUsuarios.php">Ver Usuarios</a>
-           <a href="verPreguntas.php">Ver Preguntas</a>
+           <a href="verPreguntas2.php">Ver Preguntas</a>
         </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
@@ -268,7 +299,7 @@ session_start();
                     <input type="radio" name="comidaextranjera" value="comidamexicana" required>Comida Mexicana<br>
                 </div>
                 <div class="col-md-6">      
-                    <input type="radio" name="comidaextranjera" value="comidajaponesa" required>Comida Japonesa<br>
+                    <input type="radio" name="comidaextranjera" value="comidajaponesa" required>Comida Coreana<br>
                 </div>
             </div>
             <button class="enviarPrg" type="submit" value="Enviar" id="boton">Enviar</button>

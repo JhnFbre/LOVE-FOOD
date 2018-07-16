@@ -337,3 +337,203 @@ button:hover{
         margin-top: 20px;
     }
 }
+
+.centrar2{
+    padding-top: 4%;
+    margin-left: 30%;
+    text-align: center;
+    width: 80%;
+}
+
+.centrar2 th{
+margin: 20px;
+}
+
+
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+   
+    background-color:#e9c85d;
+    color: white;
+}
+
+
+.titulo{
+    padding-top: 45pt;
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+    font-family: serif;
+    color: red;
+}
+
+h2{
+    color: red;
+    text-align: center;
+}
+
+.foto img{
+    margin: 0 auto;
+    display: block;
+    width: 40%;
+    height: auto;
+}
+
+html{padding: 0;margin: 0}
+input[type="submit"] {
+    background: #a00;
+    font-weight: 650;
+    color: white;    
+    margin-left: 10%;
+}
+input[type="text"] {
+    color: #444;
+    font-weight: 600;
+    background: #eee;
+}
+input[type="text"]::placeholder { 
+    color: #666    ; 
+}
+
+#iz, #de{
+    float: left;
+}
+#iz{
+    width: 40%;
+    margin-top: 30px;
+    margin-left: 30px;
+    z-index: 1000;
+}
+#iz form{
+    padding-left: 10%;
+    padding-top: 20%;
+}
+form input{
+    margin-top: 25px;
+    border-radius: 12px;
+    padding: 10px;
+}
+form h4{
+    margin-left:10%;
+    color: #c00;
+}
+#de{
+    margin-top:25px;
+    float: right;
+    z-index: 10;
+}
+#img-index{
+    display: inline-block;
+    width: 750px;
+}
+#cora-movil{
+    display: none;
+}
+@media only screen and (max-width: 1450px) {
+    #img-index{
+        width: 650px;
+        margin-top: 5%;
+    }
+}
+@media only screen and (max-width: 1150px) {
+    #img-index{
+        width: 450px;
+        margin-top: 25%;
+    }
+}
+@media only screen and (max-width: 950px) {
+    #img-index{
+        width: 300px;
+        margin-top: 50%;
+    }
+    form{
+        margin-top: 25%;
+    }
+}
+@media only screen and (max-width: 730px) {
+    form{
+        padding: 0 !important;
+        padding-top: 250px  !important;
+    }
+    #cora-movil, form{
+        display: block; 
+        width: 200px; 
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: auto !important;
+        
+    }
+    #img-index{
+        display: none;
+        top:150px;
+    }
+    
+}
+.botonRegresar{
+    background-color: #449d44;
+    border-color: #398439;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-left: 600px;
+    font-family: sans-serif;
+    
+}
+.botonRegresar:Hover{
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    background-color: #ec971f;
+    border-color: #d58512;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+    
+}
+
+h4{
+    margin-left: 500px;
+    text-align: center;
+    align-content: center;
+    font-family: sans-serif;
+}
+.row{
+    align-content: center;
+    text-align: center;
+}
+
+.imgEspera img{
+    width: 40%;
+    margin-left: 40%;
+    text-align: center;
+}
+
+.imgEspera h2{
+   
+    margin-left: 21%;
+  
+}
+
