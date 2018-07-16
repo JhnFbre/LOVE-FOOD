@@ -16,8 +16,6 @@ $b=$_SESSION['id'];;
            //Contenido de la pagina
            
            foreach ($RespuestasCollectorObj->showRespuestas() as $c){
-                      print_r ($c->getIdUsuario());
-                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";  
                         if  ($c->getIdUsuario() == $b) {
                             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginaResultados.php'>";
                         }
@@ -59,30 +57,13 @@ $b=$_SESSION['id'];;
 			});
         
         
-        validarRsp();
-        function validarRsp(){
-            alert("hbsjdbnjs");
-            <?php
-           $b=2;
-                    foreach ($RespuestasCollectorObj->showRespuestas() as $c){
-                     // print_r ($c);
-                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";  
-                        if  ($c->getIdUsuario() == $b) {
-                            echo "a es mayor que b";
-                        }else{
-                            echo "no entro";
-                        }
-                }
-
-                ?>
         }
 		 
     </script>
 </head>
 <body>
     <div class="barra">  
-       <?php  
-        echo '<h4>' . $nombre . '</h4>'?>
+       
         <hr>
         <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
