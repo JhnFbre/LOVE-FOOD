@@ -1,15 +1,19 @@
 <?php
 session_start();
-include_once("modelo/persona/PersonaCollector.php");
 
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$contacto = $_POST['contacto'];
-$usuario = $_POST['usuario'];
-$clave = $_POST['clave'];
-$sexo = $_POST['sexo'];
+if (!isset($_SESSION['user'])){
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
+        }else{
+            include_once("modelo/persona/PersonaCollector.php");
 
-$PersonaCollectorObj = new PersonaCollector();
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $contacto = $_POST['contacto'];
+            $usuario = $_POST['usuario'];
+            $clave = $_POST['clave'];
+            $sexo = $_POST['sexo'];
+
+            $PersonaCollectorObj = new PersonaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -48,3 +52,6 @@ $PersonaCollectorObj = new PersonaCollector();
           </div>
     </body>
 </html>
+<?php
+}
+?>

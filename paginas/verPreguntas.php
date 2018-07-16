@@ -1,15 +1,21 @@
 <?php
 session_start();
-$nombre = $_SESSION['nombre'];
-?>
-<?php
 
-include_once("modelo/preguntas/RespuestasCollector.php");
+if (!isset($_SESSION['user'])){
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
+        }else{
+            $nombre = $_SESSION['nombre'];
+            $apellido = $_SESSION['apellido'];
+            $usuario = $_SESSION['usuario'];
+            $id = $_SESSION['id'];
+            ?>
+            <?php
+            include_once("modelo/preguntas/RespuestasCollector.php");
 
 
+            $RespuestasCollectorObj = new RespuestasCollector();
 
 
-$RespuestasCollectorObj = new RespuestasCollector();
 ?>
 
 
@@ -51,59 +57,46 @@ $RespuestasCollectorObj = new RespuestasCollector();
         </div>
     </div>
     
-
-   
-         
-    <div class="titulo"><h1>Lista de preguntas</h1></div>
+    <div class="titulo"><h1>Lista de Respuestas</h1></div>
    <div class="centrar2">
      <table id="customers">
                 <tr>    
-                    <th >getIdRespuesta</th>
-                    <th >getUsuario</th>
-                    <th >getRspPreferencia</th>
-                    <th >getRspDesayunoSalado</th>
-                    <th >getRspDesayunoDulce</th>
-                     <th >getRspAlmuerzo</th>
-                     <th >getRspCena</th>
-                    <th  >getRspComidaTipica</th>
-                    <th >getRspCarnes</th>
-                    <th >getRspPostres</th>
-                    <th >getRspSaboresDulces</th>
-                     <th >getRspBebida</th>
-                     <th >getRspComidaExtranjera</th>
+                    <th class='IP'>Id</th>
+                    <th class='IP'>IdUsuario</th>
+                    <th class='NO' >Usuario</th>
+                    <th class='AP'>preferencia</th>
+                    <th class='EM'>desayuno salado</th>
+                    <th class='US'>desayuno dulce</th>
+                     <th class='CL'>almuerzo</th>
+                     <th class='CL'>cena</th>
+                     <th class='CL'>comida tipica</th>
+                     <th class='CL'>carnes</th>
+                     <th class='CL'>postres</th>
+                     <th class='CL'>sabores dulces</th>
+                     <th class='CL'>bebidas</th>
+                     <th class='CL'>comida extranjera</th>
                    
                 </tr>
                 <?php
-                    echo "oli";
-                    foreach ($RespuestasCollectorObj->showRespuestas() as $resp){
+                    foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                     // print_r ($c);
                     echo "<tr>";
-                        echo "oli adentro";
-                        echo "<td >oli</td>";
-                        echo "<td >" . $resp->getsomething() . "</td>";
-                    echo "</tr>";
-                   
-                    echo "<td class='IP'>" . $resp->getId() . "</td>";
-                    echo "<td class='NO'>" . $resp->getUsuario() . "</td>";             
-                    echo "<td class='AP'>" . $resp->getRspPreferencia() . "</td>";   
-                    echo "<td class='EM'>" . $resp->getRspDesayunoSalado() . "</td>";   
-                    echo "<td class='US'>" . $resp->getRspDesayunoDulce() . "</td>";
-                    echo "<td class='CL'>" . $resp->getRspAlmuerzo() . "</td>";  
-                    echo "<td class='IP'>" . $resp->getRspCena() . "</td>";
-                    echo "<td class='NO'>" . $resp->getRspComidaTipica() . "</td>";             
-                    echo "<td class='AP'>" . $resp->getRspCarnes() . "</td>";   
-                    echo "<td class='EM'>" . $resp->getRspPostres() . "</td>";   
-                    echo "<td class='US'>" . $resp->getRspSaboresDulces() . "</td>";
-                    echo "<td class='CL'>" . $resp->getRspBebida() . "</td>";  
-                    echo "<td class='CL'>" . $resp->getRspComidaExtranjera() . "</td>";  
+                    echo "<td class='IP'>" . $c->getId(). "</td>";
+                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";             
+                    echo "<td class='NO'>" . $c->getUsuario() . "</td>";             
+                    echo "<td class='AP'>" . $c->getRspPreferencia() . "</td>";   
+                    echo "<td class='EM'>" . $c->getRspDesayunoSalado() . "</td>";   
+                    echo "<td class='US'>" . $c->getRspDesayunoDulce() . "</td>";
+                    echo "<td class='CL'>" . $c->getRspAlmuerzo() . "</td>"; 
+                        echo "<td class='CL'>" . $c->getRspCena() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspComidaTipica() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspCarnes() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspPostres() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspSaboresDulces() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspBebida() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
                         
-                        
-                        
-                       echo "<td><a href='update_persona.php?ID=". $c->getIdPersona() ."&NM=". $c->getNombre() ."&AP=". $c->getApellido() ."&EM=". $c->getEmail() ."&US=". $c->getUsuario() ."&PS=". $c->getClave() ."'><button>Editar</button></a></td>";
-
-                    echo "<td><a href='delete_persona.php?ID=". $c->getIdPersona() ."'><button>Eliminar</button></a></td>";
-                    echo "</tr>"; 
-
-
+                        echo "</tr>";
 
                 }
 
@@ -111,7 +104,121 @@ $RespuestasCollectorObj = new RespuestasCollector();
 
             </table>
     </div>
+         <div class="titulo"><h1>Lista de Respuestas usuario logeado</h1></div>
+   <div class="centrar2">
+     <table id="customers">
+                <tr>    
+                    <th class='IP'>Id</th>
+                    <th class='IP'>IdUsuario</th>
+                    <th class='NO' >Usuario</th>
+                    <th class='AP'>preferencia</th>
+                    <th class='EM'>desayuno salado</th>
+                    <th class='US'>desayuno dulce</th>
+                     <th class='CL'>almuerzo</th>
+                     <th class='CL'>cena</th>
+                     <th class='CL'>comida tipica</th>
+                     <th class='CL'>carnes</th>
+                     <th class='CL'>postres</th>
+                     <th class='CL'>sabores dulces</th>
+                     <th class='CL'>bebidas</th>
+                     <th class='CL'>comida extranjera</th>
+                   
+                </tr>
+                <?php
+                    $arrayRespuestasTmp = array();  
+                    $arrayCoincidencias = array();
+                    foreach ($RespuestasCollectorObj->showRespuestasLogeado($id) as $c){
+                     // print_r ($c);
+                    echo "<tr>";
+                    echo "<td class='IP'>" . $c->getId(). "</td>";
+                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";             
+                    echo "<td class='NO'>" . $c->getUsuario() . "</td>";             
+                    echo "<td class='AP'>" . $c->getRspPreferencia() . "</td>";   
+                    echo "<td class='EM'>" . $c->getRspDesayunoSalado() . "</td>";   
+                    echo "<td class='US'>" . $c->getRspDesayunoDulce() . "</td>";
+                    echo "<td class='CL'>" . $c->getRspAlmuerzo() . "</td>"; 
+                        echo "<td class='CL'>" . $c->getRspCena() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspComidaTipica() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspCarnes() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspPostres() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspSaboresDulces() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspBebida() . "</td>";  
+                        echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
+                        
+                        echo "</tr>";
+        
+                            /*($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+                        */
+                        
+                        array_push($arrayRespuestasTmp, $c->getRspPreferencia());
+                        array_push($arrayRespuestasTmp, $c->getRspDesayunoSalado());
+                        array_push($arrayRespuestasTmp, $c->getRspDesayunoDulce());
+                        array_push($arrayRespuestasTmp, $c->getRspAlmuerzo());
+                        array_push($arrayRespuestasTmp, $c->getRspCena());
+                        array_push($arrayRespuestasTmp, $c->getRspComidaTipica());
+                        array_push($arrayRespuestasTmp, $c->getRspCarnes());
+                        array_push($arrayRespuestasTmp, $c->getRspPostres());
+                        array_push($arrayRespuestasTmp, $c->getRspSaboresDulces());
+                        array_push($arrayRespuestasTmp, $c->getRspBebida());
+                        array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
+                        
+
+                }
+         echo "</div>";
+         echo "</table>"; 
+                
+               //echo "<h4>Objeto " . $RespuestasLogeado->getId(). "</h4>";
+               echo "<h4 Arreglo >" . $arrayRespuestasTmp[0] . "</h4>";
+                foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                    if($arrayRespuestasTmp[0] == $c->getRspPreferencia() && 
+                       $arrayRespuestasTmp[1] == $c->getRspDesayunoSalado() &&
+                       $arrayRespuestasTmp[2] == $c->getRspDesayunoDulce() && 
+                       $arrayRespuestasTmp[3] == $c->getRspAlmuerzo() && 
+                       $arrayRespuestasTmp[4] == $c->getRspCena() && 
+                       $arrayRespuestasTmp[5] == $c->getRspComidaTipica() && 
+                       $arrayRespuestasTmp[6] == $c->getRspCarnes() && 
+                       $arrayRespuestasTmp[7] == $c->getRspPostres() && 
+                       $arrayRespuestasTmp[8] == $c->getRspSaboresDulces() && 
+                       $arrayRespuestasTmp[9] == $c->getRspBebida() && 
+                       $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
+                        //echo "Coinciden <br>";
+                        array_push($arrayCoincidencias, $c); 
+                    }else{
+                        //echo "No coinciden<br>";
+                        
+                    }
+                    
+                }
+         ?>
+                <div class ='titulo'><h1>¡Tus posibles parejas de comida ideal!</h1></div>
+                    <div class='centrar2'>
+                        <table id='customers'>
+                            <tr>
+                                
+                                <th>Nombre</th>
+                                <th>ID</th>
+                            </tr>
+            <?php
+                foreach ($arrayCoincidencias as $coincidencia){
+                    echo "<tr>";
+                    //echo "<td>". $contadorNro ."</td>";
+                    echo "<td>". $coincidencia->getUsuario() ."</td>";
+                    echo "<td>". $coincidencia->getIdUsuario() ."</td>";
+                    
+                    echo "</tr>";
+
+                    //echo "Esta persona tiene tus mismos gustos " . $coincidencia->getUsuario() ." con el ID: " . $coincidencia->getId(). "<br>";
+                }
+                ?>
+         </div>
+         </table> 
+
+            </table>
+    </div>
           
    
 </body>
 </html>
+<?php
+}
+?>

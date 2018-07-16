@@ -1,11 +1,19 @@
 <?php
 session_start();
-$nombre = $_SESSION['nombre'];
-$apellido = $_SESSION['apellido'];
-$usuario = $_SESSION['usuario'];
-$id = $_SESSION['id'];
+
+
+       if (!isset($_SESSION['user'])){
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
+        }else{
+           $nombre = $_SESSION['nombre'];
+            $apellido = $_SESSION['apellido'];
+            $usuario = $_SESSION['usuario'];
+            $id = $_SESSION['id'];
+           //Contenido de la pagina
 ?>
+
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -300,3 +308,8 @@ $id = $_SESSION['id'];
         
     </script>
 </html>
+
+
+<?php
+}
+?>

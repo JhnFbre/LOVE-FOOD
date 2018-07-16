@@ -1,11 +1,14 @@
 <?php
 session_start();
-$nombre = $_SESSION['nombre'];
-?>
-<?php
-include_once("modelo/persona/PersonaCollector.php");
 
-$PersonaCollectorObj = new PersonaCollector();
+if (!isset($_SESSION['user'])){
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
+        }else{
+            $nombre = $_SESSION['nombre'];
+
+            include_once("modelo/persona/PersonaCollector.php");
+
+            $PersonaCollectorObj = new PersonaCollector();
 ?>
 
 
@@ -89,3 +92,7 @@ $PersonaCollectorObj = new PersonaCollector();
    
 </body>
 </html>
+
+<?php
+}
+?>

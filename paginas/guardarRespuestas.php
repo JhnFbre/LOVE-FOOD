@@ -1,24 +1,27 @@
 <?php
 session_start();
-include_once("modelo/preguntas/RespuestasCollector.php");
+       if (!isset($_SESSION['user'])){
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
+        }else{
+            include_once("modelo/preguntas/RespuestasCollector.php");
 
-$usuario = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$idusuario = $_POST['idusuario'];
-$preferencia = $_POST['preferencia'];
-$desayunosalado = $_POST['desayunosalado'];
-$desayunodulce = $_POST['desayunodulce'];
-$almuerzo = $_POST['almuerzo'];
-$cena = $_POST['cena'];
-$comidatipica = $_POST['comidatipica'];
-$carnes = $_POST['carnes'];
-$postres = $_POST['postres'];
-$saboresdulces = $_POST['saboresdulces'];
-$bebida = $_POST['bebida'];
-$comidaextranjera = $_POST['comidaextranjera'];
-$nameUser=$usuario." ".$apellido;
+            $usuario = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $idusuario = $_POST['idusuario'];
+            $preferencia = $_POST['preferencia'];
+            $desayunosalado = $_POST['desayunosalado'];
+            $desayunodulce = $_POST['desayunodulce'];
+            $almuerzo = $_POST['almuerzo'];
+            $cena = $_POST['cena'];
+            $comidatipica = $_POST['comidatipica'];
+            $carnes = $_POST['carnes'];
+            $postres = $_POST['postres'];
+            $saboresdulces = $_POST['saboresdulces'];
+            $bebida = $_POST['bebida'];
+            $comidaextranjera = $_POST['comidaextranjera'];
+            $nameUser=$usuario." ".$apellido;
 
-$RespuestasCollectorObj = new RespuestasCollector();
+            $RespuestasCollectorObj = new RespuestasCollector();
 
 ?>
                                                                             
@@ -60,3 +63,7 @@ $RespuestasCollectorObj = new RespuestasCollector();
   </div>
     </body>
 </html>
+
+<?php
+       }
+?>
