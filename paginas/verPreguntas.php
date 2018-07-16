@@ -128,6 +128,7 @@ if (!isset($_SESSION['usuario'])){
                     $arrayRespuestasTmp = array();  
                     $arrayCoincidencias = array();
                     foreach ($RespuestasCollectorObj->showRespuestasLogeado($id) as $c){
+                   
                      // print_r ($c);
                     echo "<tr>";
                     echo "<td class='IP'>" . $c->getId(). "</td>";
@@ -146,7 +147,7 @@ if (!isset($_SESSION['usuario'])){
                         echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
                         
                         echo "</tr>";
-        
+                    
                             /*($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
                         */
                         
@@ -163,14 +164,16 @@ if (!isset($_SESSION['usuario'])){
                         array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
                         array_push($arrayRespuestasTmp, $c->getIdUsuario());
                         
-
+                        
                 }
+
          echo "</div>";
          echo "</table>"; 
                 
                //echo "<h4>Objeto " . $RespuestasLogeado->getId(). "</h4>";
                echo "<h4 Arreglo >" . $arrayRespuestasTmp[0] . "</h4>";
                 foreach ($RespuestasCollectorObj->showRespuestas() as $c){
+                     $nroCoincidencias = 0;
                     if($arrayRespuestasTmp[0] == $c->getRspPreferencia() && 
                        $arrayRespuestasTmp[1] == $c->getRspDesayunoSalado() &&
                        $arrayRespuestasTmp[2] == $c->getRspDesayunoDulce() && 
@@ -184,11 +187,13 @@ if (!isset($_SESSION['usuario'])){
                        $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera() &&
                        $arrayRespuestasTmp[11] != $c->getIdUsuario()){
                         //echo "Coinciden <br>";
-                        array_push($arrayCoincidencias, $c); 
+                        array_push($arrayCoincidencias, $c);
+                        $nroCoincidencias = $nroCoincidencias + 1;
                     }else{
                         //echo "No coinciden<br>";
                         
                     }
+                    echo "<h3> Nro de coincidencias para el user " . $c->getUsuario() . "=" . $nroCoincidencias ."</h3>";
                     
                 }
          ?>

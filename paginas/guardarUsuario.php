@@ -23,6 +23,7 @@ if (!isset($_SESSION['usuario'])){
         <title>LOVE FOOD</title>
         <link rel="stylesheet" href="../css/estilosIndex.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/estilosGuardarRespuesta.css">
         <link rel="icon" href="../images/logoPesta%C3%B1a.png">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,17 +33,17 @@ if (!isset($_SESSION['usuario'])){
     <body>
         <div class="container">
             <div class="row">
-               <img src="../images/logo.png" alt="">
+               <img src="../images/logo.png" class="img-responsive modImagen" alt="">
                 <?php
                       if (isset($_SESSION['usuario'])){
-                        echo "<h4>Se creó un nuevo lover </h4>";
+                        echo "<h4 class='cntrh4'>Se guardaron sus respuestas  </h4>";
                         $PersonaCollectorObj->createPersona($nombre,$apellido,$contacto,$usuario,$clave,$sexo);
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<a href='nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
                           echo "</div>";
                           echo "<div class='row'>";
-                          echo "<img src='../images/corazones.gif' alt=''>";
+                          echo "<img src='../images/corazones.gif' class='resGif' alt=''>";
                           echo "</div>";
                       }
                 ?>

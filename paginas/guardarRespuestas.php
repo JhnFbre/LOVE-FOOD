@@ -1,27 +1,24 @@
 <?php
 session_start();
-       if (!isset($_SESSION['usuario'])){
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
-        }else{
-            include_once("modelo/preguntas/RespuestasCollector.php");
+include_once("modelo/preguntas/RespuestasCollector.php");
 
-            $usuario = $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $idusuario = $_POST['idusuario'];
-            $preferencia = $_POST['preferencia'];
-            $desayunosalado = $_POST['desayunosalado'];
-            $desayunodulce = $_POST['desayunodulce'];
-            $almuerzo = $_POST['almuerzo'];
-            $cena = $_POST['cena'];
-            $comidatipica = $_POST['comidatipica'];
-            $carnes = $_POST['carnes'];
-            $postres = $_POST['postres'];
-            $saboresdulces = $_POST['saboresdulces'];
-            $bebida = $_POST['bebida'];
-            $comidaextranjera = $_POST['comidaextranjera'];
-            $nameUser=$usuario." ".$apellido;
+$usuario = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$idUs = $_POST['idusuario'];
+$preferencia = $_POST['preferencia'];
+$desayunosalado = $_POST['desayunosalado'];
+$desayunodulce = $_POST['desayunodulce'];
+$almuerzo = $_POST['almuerzo'];
+$cena = $_POST['cena'];
+$comidatipica = $_POST['comidatipica'];
+$carnes = $_POST['carnes'];
+$postres = $_POST['postres'];
+$saboresdulces = $_POST['saboresdulces'];
+$bebida = $_POST['bebida'];
+$comidaextranjera = $_POST['comidaextranjera'];
+$nameUser=$usuario." ".$apellido;
 
-            $RespuestasCollectorObj = new RespuestasCollector();
+$RespuestasCollectorObj = new RespuestasCollector();
 
 ?>
                                                                             
@@ -33,6 +30,7 @@ session_start();
         <title>LOVE FOOD</title>
         <link rel="stylesheet" href="../css/estilosIndex.css">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/estilosGuardarRespuesta.css">
         <link rel="icon" href="../images/logoPesta%C3%B1a.png">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -42,17 +40,17 @@ session_start();
     <body>
        <div class="container">
             <div class="row">
-               <img src="../images/logoPng.png" alt="">
+               <img src="../images/logo.png" class="img-responsive modImagen" alt="">
                 <?php
                       if (isset($_SESSION['usuario'])){
-                         echo "<h4>Se guardaron sus respuestas  </h4>";
-                $RespuestasCollectorObj->createRespuesta($idusuario,$usuario,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
+                         echo "<h4 class='cntrh4'>Se guardaron sus respuestas  </h4>";
+                $RespuestasCollectorObj->createRespuesta($idUs,$nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
                           echo "</div>";
                           echo "<div class='row'>";
                           echo "<a href='paginaPreguntas.php' class = 'botonRegresar'>Regresar </a>";
                           echo "</div>";
                           echo "<div class='row'>";
-                          echo "<img src='../images/corazones.gif' alt=''>";
+                          echo "<img src='../images/corazones.gif' class='resGif' alt=''>";
                           echo "</div>";
                       }
                 ?>
@@ -63,7 +61,3 @@ session_start();
   </div>
     </body>
 </html>
-
-<?php
-       }
-?>
