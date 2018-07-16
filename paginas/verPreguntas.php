@@ -161,6 +161,7 @@ if (!isset($_SESSION['usuario'])){
                         array_push($arrayRespuestasTmp, $c->getRspSaboresDulces());
                         array_push($arrayRespuestasTmp, $c->getRspBebida());
                         array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
+                        array_push($arrayRespuestasTmp, $c->getIdUsuario());
                         
 
                 }
@@ -180,7 +181,8 @@ if (!isset($_SESSION['usuario'])){
                        $arrayRespuestasTmp[7] == $c->getRspPostres() && 
                        $arrayRespuestasTmp[8] == $c->getRspSaboresDulces() && 
                        $arrayRespuestasTmp[9] == $c->getRspBebida() && 
-                       $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
+                       $arrayRespuestasTmp[10] == $c->getRspComidaExtranjera() &&
+                       $arrayRespuestasTmp[11] != $c->getIdUsuario()){
                         //echo "Coinciden <br>";
                         array_push($arrayCoincidencias, $c); 
                     }else{

@@ -55,7 +55,7 @@ session_start();
         <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
            <a href="verUsuarios.php">Ver Usuarios</a>
-           <a href="verPreguntas2.php">Ver Preguntas</a>
+           <a href="verPreguntas.php">Ver Preguntas</a>
         </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
