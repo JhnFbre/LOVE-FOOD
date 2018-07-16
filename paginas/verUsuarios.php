@@ -17,8 +17,7 @@ if (!isset($_SESSION['usuario'])){
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/estilo2.css">
-    <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+    <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
     <script type="text/javascript">
@@ -38,7 +37,7 @@ if (!isset($_SESSION['usuario'])){
         echo '<h4>'.$nombre.'</h4>'
             ?>
         <hr><div class="menu">
-           <a href="nuevoUsuario.php">Crear Usuario</a>
+           <br><a href="nuevoUsuario.php">Crear Usuario</a>
         </div>
         
         <div class="salirSesion">

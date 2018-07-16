@@ -32,7 +32,7 @@ $RespuestasCollectorObj = new RespuestasCollector();
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/estilosPreguntas.css">
           <link rel="stylesheet" href="../css/estilo2.css">
-        <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+        <link rel="icon" href="../images/logoPeque.png">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         
@@ -41,18 +41,16 @@ $RespuestasCollectorObj = new RespuestasCollector();
     <body>
        <div class="container">
             <div class="row">
-               <img src="../images/logo.png" class="img-responsive modImagen" alt="">
                 <?php
                       if (isset($_SESSION['usuario'])){
                          echo "<h4 class='cntrh4'>Se guardaron sus respuestas  </h4>";
                 $RespuestasCollectorObj->createRespuesta($idUs,$nameUser,$preferencia,$desayunosalado,$desayunodulce,$almuerzo,$cena,$comidatipica,$carnes,$postres,$saboresdulces,$bebida,$comidaextranjera);
                           echo "</div>";
-                          echo "<div class='row'>";
-                          echo "<a href='paginaResultados.php' class = 'botonRegresar'>Regresar </a>";
-                          echo "</div>";
+                          
                           echo "<div class='row'>";
                           echo "<img src='../images/corazones.gif' class='resGif' alt=''>";
                           echo "</div>";
+                          echo "<meta HTTP-EQUIV='REFRESH' CONTENT='2;URL=paginaResultados.php'>";
                       }
                 ?>
                 

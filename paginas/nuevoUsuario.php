@@ -18,8 +18,7 @@ if (!isset($_SESSION['usuario'])){
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
-    <link rel="icon" href="../images/logoPesta%C3%B1a.png">
-      <link rel="stylesheet" href="../css/estilo2.css">
+    <link rel="icon" href="../images/logoPeque.png">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -34,8 +33,9 @@ if (!isset($_SESSION['usuario'])){
        <?php  
         echo '<h4>'.$nombre.'</h4>'
             ?>
-        <hr><div class="menu">
-           <a href="verUsuarios.php">Ver usuarios</a>
+        <hr>
+        <div class="menu">
+           <br><a href="verUsuarios.php">Ver usuarios</a>
         </div>
         
         <div class="salirSesion">
@@ -53,38 +53,41 @@ if (!isset($_SESSION['usuario'])){
                     <ul>
                     <li>
                         <label for="name">Nombre</label>
-                        <input type="text" name="nombre" maxlength="100">
+                        <input type="text" name="nombre" maxlength="100" required>
                         <span>Introduce tu nombre</span>
                     </li>
                     <li>
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" maxlength="100">
+                        <input type="text" name="apellido" maxlength="100" required>
                         <span>Introduce tu apellido</span>
                     </li>
                     <li>
                         <label for="contacto">Contacto</label>
-                        <input type="text" name="contacto" maxlength="100">
+                        <input type="text" name="contacto" maxlength="100" required>
                         <span>Ingresa tu número o facebook</span>
                     </li>
                     <li>
                         <label for="usuario">Usuario</label>
-                        <input type="text" name="usuario" maxlength="100">
+                        <input type="text" name="usuario" maxlength="100" required>
                         <span>Introduce tu usuario</span>
                     </li>
                    
                     <li>
                         <label for="clave">Clave</label>
-                        <input type="text" name="clave" maxlength="100">
+                        <input type="text" name="clave" maxlength="100" required>
                         <span>Introduce tu clave personal</span>
                     </li>
                   
-                        <li>
-                        <h4>Sexo</h4>
-                <input type="radio" name="sexo" value="hombre" required>Hombre<br>
-                <input type="radio" name="sexo" value="mujer" required>Mujer<br>
-                
+                    <li>
+                        <label>Sexo</label>
+                        <div  class="lisexo">
+                            <input id="hombre" type="radio" name="sexo" value="hombre" required>
+                            <label for="hombre">Hombre</label>
+                            <input id="mujer" type="radio" name="sexo" value="mujer" required>
+                            <label for="mujer">Mujer</label>
+                        </div>
                     </li>
-                        <input type="submit" value="REGISTRAR" >
+                        <input type="submit" value="REGISTRARSE" >
                     </ul>
                     
                 </form> 

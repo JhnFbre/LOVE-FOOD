@@ -42,13 +42,14 @@
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .form-style-7 input[type="text"],
 .form-style-7 input[type="email"],
 .form-style-7 input[type="password"],
 .form-style-7 textarea,
 .form-style-7 select 
 {
-    color: #B9B9B9;
+    color: black;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -60,7 +61,7 @@
     line-height: 25px;
     font-size: 20px;
     padding: 0;text-align: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Garamond;
 }
 
 .form-style-7 li > span{
@@ -78,7 +79,7 @@
     resize:none;
 }
 .form-style-7 input[type="submit"],
-.form-style-7 input[type="button"]{
+.form-style-7 input[type="button"],.enviarPrg{
     background: transparent;
     color:#c90000;
     border: 2px solid #c90000;
@@ -90,7 +91,7 @@
     font-size: 20px;
 }
 .form-style-7 input[type="submit"]:hover,
-.form-style-7 input[type="button"]:hover{
+.form-style-7 input[type="button"]:hover,.enviarPrg:hover{
     background: #c80000;
     color:#FFF;
     border-radius: 5px;
@@ -111,9 +112,16 @@
     padding: 15px 0px;
     text-align: center;
 }
-.salirSesion:hover{
-    background: #a22;
+.salirSesion a{
+    color: white;
+    display: block;
 }
+.salirSesion a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
 .barra h4{
     text-align: center;
     color: white;
@@ -121,16 +129,26 @@
     margin-top: 25%;
     margin-bottom: 10px;
 }
+.menu{text-align: center;}
 .menu a{
     margin-bottom: 15px;
     text-align: center;
     font-weight: 550;
     transition: all 0.6s ease;
+    color: brown;
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    
 }
 .menu a:hover{
-    color: #922;
+    color: white;
     text-decoration: none;
     transition: all 0.6s ease;
+    background: #922;
+    font-weight: bold;
+    
 }
 .logoB{
     width: 150px;
@@ -144,8 +162,6 @@ hr{
     margin-bottom: 25px;
 }
 a{
-    display: block;
-    color: #eee !important;
     margin: 0 15px;
     text-decoration: none;
 }
@@ -177,13 +193,6 @@ a{
     margin-left: 60px;
     margin-top: 30px;
 }
-input:hover {
-    background-color: #ccc;
-}
-a:hover{
-    color: #aaa !important;
-    text-decoration: none;
-}
 
 button{
     margin-top: 30px !important;    
@@ -204,6 +213,7 @@ button:hover{
 .centrar{
     text-align: center;
     padding-left: 20%;
+    
 }
 
 .botonCrear{
@@ -275,15 +285,8 @@ button:hover{
     width: 20px;
     color: aquamarine;
 }
-.enviarPrg{
-    color:#c90000;
-    border: 2px solid #c90000;
-    width: 100px;
-    padding: 10px 20px 10px 20px;
-    border-bottom: 5px solid #a22;
-    border-radius: 5px;
-    font-size: 20px;
-}
+
+
 .modImagen{
     width: 75% !important;
     display: block;
@@ -305,10 +308,9 @@ button:hover{
 
 .cntrh4{
     text-align: center;
-    margin-top: 80px;
+    margin-top: 40px;
     position: absolute;
     margin: auto;
-    margin-top: 100px;
     top:64%;
     left: 0;
     right: 0;
@@ -336,4 +338,140 @@ button:hover{
     .modImagen{
         margin-top: 20px;
     }
+}
+.divError{text-align: center; margin-top: 5%;}
+            .mensajeLoginError{
+                font-size: 30px;
+                font-family: courier;
+            }
+            img{width: 200px}
+.centrar .lisexo label{
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.centrar .radio label:hover{
+      background: rgba(255, 65, 54, 0.1); }
+.centrar .radio label:before{
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+     border: 3px solid #FF4136;
+}
+
+.centrar input[type="radio"] {
+    display: none;
+}
+.centrar input[type="radio"]:checked + label:before {
+      display: none; }
+.centrar input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #e9c85d;
+      border-radius: 2px;
+      color: white;
+    
+}
+.btnRegresar{
+    color:black;
+    border: 2px solid #c90000;
+    width: 100px;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 5px solid #a22;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.btnRegresar:hover{
+    
+    color:white;
+    background-color: #c90000;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 30px;
+    width: 30px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.placePreguntas input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.placePreguntas input[type="radio"]:hover {
+  background: #9faab7;
+}
+.placePreguntas input[type="radio"]:checked {
+  background: #c90000;
+}
+.placePreguntas input[type="radio"]:checked::before {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.placePreguntas input[type="radio"]:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #c90000;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 5px;
+}
+.placePreguntas input[type="radio"]{
+  border-radius: 50%;
+}
+.placePreguntas input[type="radio"]::after{
+  border-radius: 50%;
+}
+
+.row{
+    margin: 15px 0;
 }

@@ -9,7 +9,7 @@
     <title>LOVE FOOD</title>
     
      <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="icon" href="images/logoPesta%C3%B1a.png">
+    <link rel="icon" href="images/logoPeque.png">
     <link rel="stylesheet" href="css/estilosIndex.css">
     <link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -21,7 +21,7 @@
         <div class="form-login">
             
             <form class="login100-form validate-form p-b-33 p-t-5" action="validarLogin.php" method="post">
-                <img src="images/logoPesta%C3%B1a.png" alt="Logo corazon LOVEFOOD" id="cora-movil">
+                <img src="images/logoPeque.png" alt="Logo corazon LOVEFOOD" id="cora-movil">
                 <span class="login100-form-title p-b-41">
 					Iniciar Sesión
 				</span>

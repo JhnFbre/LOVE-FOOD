@@ -18,46 +18,42 @@ $PersonaCollectorObj = new PersonaCollector();
     <head>
         <meta charset="utf-8">
         <title>LOVE FOOD</title>
-        <link rel="stylesheet" href="../css/estilosIndex.css">
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="icon" href="../images/logoPesta%C3%B1a.png">
+        <link rel="icon" href="../images/logoPeque.png">
+        <link rel="stylesheet" href="../css/estilosPreguntas.css">
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        
+       
     
     </head>
     <body>
         <div class="container">
             <div class="row">
-               <img src="../images/logo.png" alt="">
                 <?php
                       if (isset($_SESSION['usuario'])){
                           //--
                             foreach ($PersonaCollectorObj->showPersonas() as $c){
-                                if(($c->getUsuario() == $usuario)&&($c->getApellido() == $apellido)){
+                                if($c->getUsuario() == $usuario){
                                 $r=true;
-                          echo "<h4>Error: usuario existente</h4>";
-                          echo "</div>";
-                          echo "<div class='row'>";
-                          echo "<a href='../paginas/nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
-                          echo "</div>";
-                          echo "<div class='row'>";
-                          echo "<img src='../images/corazones.gif' alt=''>";
-                          echo "</div>";
-
                             }
                         } 
                         //--------  
                         if($r==false){
-                            echo "<h4>Se creó un nuevo lover </h4>";
+                            
                         $PersonaCollectorObj->createPersona($nombre,$apellido,$contacto,$usuario,$clave,$sexo);
-                          echo "</div>";
-                          echo "<div class='row'>";
-                          echo "<a href='../paginas/nuevoUsuario.php' class = 'botonRegresar'>Regresar </a>";
-                          echo "</div>";
-                          echo "<div class='row'>";
-                          echo "<img src='../images/corazones.gif' alt=''>";
-                          echo "</div>";
+                            ?>
+                          <div class='col-md-12 divError'>
+                              
+                              <img src='../images/corazones.gif' alt=''><br><br><br><br>
+                              <h4 class="mensajeLoginError">Se creó un nuevo lover </h4><br><br><br><br>
+                              <a href='../paginas/nuevoUsuario.php' class='btnRegresar'>Regresar</a>
+                          </div>
+                           <?php
+                        }else{
+                            echo "<div class='divError'>";
+                            echo "<img src='../images/logoPeque.png' alt=''>";
+                            echo "<h4 class='mensajeLoginError'>Usuario existente</h4>";
+                            echo "</div>";
+                            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1.5;URL=nuevoUsuario.php'>";
                         }
                       }
                 ?>

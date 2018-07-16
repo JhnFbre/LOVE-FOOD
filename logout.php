@@ -10,6 +10,7 @@ session_start();
             .divError{text-align: center}
             .mensajeLoginError{
                 font-size: 30px;
+                font-family: courier;
             }
             img{width: 100px}
         </style>
@@ -21,7 +22,7 @@ session_start();
                session_destroy();
                ?>
                <div class="divError">
-               <img src="images/logoPesta%C3%B1a.png" alt="">
+               <img src="images/logoPeque.png" alt="">
                <h4 class="mensajeLoginError">Cerrando Sesión</h4>
                </div>
                <?php

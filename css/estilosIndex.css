@@ -38,6 +38,7 @@ form input{
     display: block;
     border-radius: 12px;
     padding: 10px;
+    font-family: Garamond;
 }
 form h4{
     margin-left:10%;

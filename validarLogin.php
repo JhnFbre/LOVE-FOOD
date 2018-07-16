@@ -17,6 +17,7 @@ $PersonaCollectorObj = new PersonaCollector();
             .divError{text-align: center}
             .mensajeLoginError{
                 font-size: 30px;
+                font-family: courier;
             }
             img{width: 100px}
         </style>
@@ -41,11 +42,11 @@ $PersonaCollectorObj = new PersonaCollector();
         if (!isset($_SESSION['usuario'])){
         ?>
             <div class="divError">
-                <img src="images/logoPesta%C3%B1a.png" alt="">
+                <img src="images/logoPeque.png" alt="">
                 <h4 class="mensajeLoginError">Usuario o contraseña incorrecta</h4>
             </div>
             <?php
-            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=index.php?Nombre=". $c->getNombre(). "'>";
+            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1.5;URL=index.php'>";
              
         }
 		
