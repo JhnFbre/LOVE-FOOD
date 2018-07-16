@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user'])){
+if (!isset($_SESSION['usuario'])){
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
         }else{
             $nombre = $_SESSION['nombre'];

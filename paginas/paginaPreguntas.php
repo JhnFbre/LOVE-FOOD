@@ -2,7 +2,7 @@
 session_start();
 
 
-       if (!isset($_SESSION['user'])){
+       if (!isset($_SESSION['usuario'])){
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
         }else{
            $nombre = $_SESSION['nombre'];
@@ -69,9 +69,9 @@ session_start();
         
         <form method="post" action="guardarRespuestas.php">
             
-            <div><input type="" name="nombre" value="<?php echo $nombre;?>"></div>
-            <div><input type="" name="apellido" value="<?php echo $apellido;?>"></div>
-            <div><input type="" name="idusuario" value="<?php echo $id;?>"></div>
+            <div><input type="hidden" name="nombre" value="<?php echo $nombre;?>"></div>
+            <div><input type="hidden" name="apellido" value="<?php echo $apellido;?>"></div>
+            <div><input type="hidden" name="idusuario" value="<?php echo $id;?>"></div>
             
             <h4>Preferencia</h4>
             <div class="row">
