@@ -11,9 +11,10 @@ if (!isset($_SESSION['usuario'])){
             ?>
             <?php
             include_once("modelo/preguntas/RespuestasCollector.php");
-
+            include_once("modelo/persona/PersonaCollector.php");
 
             $RespuestasCollectorObj = new RespuestasCollector();
+            $PersonaCollectorObj = new PersonaCollector();
 
 
 ?>
@@ -24,9 +25,10 @@ if (!isset($_SESSION['usuario'])){
 <head>
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
-    <link rel="stylesheet" href="../css/estilosPreguntas.css">
+
     <link rel="stylesheet" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="../css/estilo2.css">
+          <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilo.css">
@@ -41,7 +43,7 @@ if (!isset($_SESSION['usuario'])){
     
     
 </head>
-<body>
+<body onload="ordenar()">
     <div class="barra">  
        <?php  
         echo '<h4>'.$nombre.'</h4>'
@@ -58,100 +60,13 @@ if (!isset($_SESSION['usuario'])){
         </div>
     </div>
     
-    <div class="titulo"><h1>Lista de Respuestas</h1></div>
-   <div class="centrar2">
-     <table id="customers">
-                <tr>    
-                    <th class='IP'>Id</th>
-                    <th class='IP'>IdUsuario</th>
-                    <th class='NO' >Usuario</th>
-                    <th class='AP'>preferencia</th>
-                    <th class='EM'>desayuno salado</th>
-                    <th class='US'>desayuno dulce</th>
-                     <th class='CL'>almuerzo</th>
-                     <th class='CL'>cena</th>
-                     <th class='CL'>comida tipica</th>
-                     <th class='CL'>carnes</th>
-                     <th class='CL'>postres</th>
-                     <th class='CL'>sabores dulces</th>
-                     <th class='CL'>bebidas</th>
-                     <th class='CL'>comida extranjera</th>
-                   
-                </tr>
-                <?php
-                    foreach ($RespuestasCollectorObj->showRespuestas() as $c){
-                     // print_r ($c);
-                    echo "<tr>";
-                    echo "<td class='IP'>" . $c->getIdRespuesta(). "</td>";
-                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";             
-                    echo "<td class='NO'>" . $c->getUsuario() . "</td>";             
-                    echo "<td class='AP'>" . $c->getRspPreferencia() . "</td>";   
-                    echo "<td class='EM'>" . $c->getRspDesayunoSalado() . "</td>";   
-                    echo "<td class='US'>" . $c->getRspDesayunoDulce() . "</td>";
-                    echo "<td class='CL'>" . $c->getRspAlmuerzo() . "</td>"; 
-                        echo "<td class='CL'>" . $c->getRspCena() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspComidaTipica() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspCarnes() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspPostres() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspSaboresDulces() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspBebida() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
-                        
-                        echo "</tr>";
 
-                }
-
-                ?>
-
-            </table>
-    </div>
-         <div class="titulo"><h1>Lista de Respuestas usuario logeado</h1></div>
-   <div class="centrar2">
-     <table id="customers">
-                <tr>    
-                    <th class='IP'>Id</th>
-                    <th class='IP'>IdUsuario</th>
-                    <th class='NO' >Usuario</th>
-                    <th class='AP'>preferencia</th>
-                    <th class='EM'>desayuno salado</th>
-                    <th class='US'>desayuno dulce</th>
-                     <th class='CL'>almuerzo</th>
-                     <th class='CL'>cena</th>
-                     <th class='CL'>comida tipica</th>
-                     <th class='CL'>carnes</th>
-                     <th class='CL'>postres</th>
-                     <th class='CL'>sabores dulces</th>
-                     <th class='CL'>bebidas</th>
-                     <th class='CL'>comida extranjera</th>
-                   
-                </tr>
                 <?php
                     $arrayRespuestasTmp = array();  
                     $arrayCoincidencias = array();
                     $arrayCoincidenciasPreguntas = array();
                     foreach ($RespuestasCollectorObj->showRespuestasLogeado($id) as $c){
-                     // print_r ($c);
-                    echo "<tr>";
-                    echo "<td class='IP'>" . $c->getIdRespuesta(). "</td>";
-                    echo "<td class='NO'>" . $c->getIdUsuario() . "</td>";             
-                    echo "<td class='NO'>" . $c->getUsuario() . "</td>";             
-                    echo "<td class='AP'>" . $c->getRspPreferencia() . "</td>";   
-                    echo "<td class='EM'>" . $c->getRspDesayunoSalado() . "</td>";   
-                    echo "<td class='US'>" . $c->getRspDesayunoDulce() . "</td>";
-                    echo "<td class='CL'>" . $c->getRspAlmuerzo() . "</td>"; 
-                        echo "<td class='CL'>" . $c->getRspCena() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspComidaTipica() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspCarnes() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspPostres() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspSaboresDulces() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspBebida() . "</td>";  
-                        echo "<td class='CL'>" . $c->getRspComidaExtranjera() . "</td>";  
-                        
-                        echo "</tr>";
-        
-                            /*($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
-                        */
-                        
+
                         array_push($arrayRespuestasTmp, $c->getRspPreferencia());
                         array_push($arrayRespuestasTmp, $c->getRspDesayunoSalado());
                         array_push($arrayRespuestasTmp, $c->getRspDesayunoDulce());
@@ -163,72 +78,69 @@ if (!isset($_SESSION['usuario'])){
                         array_push($arrayRespuestasTmp, $c->getRspSaboresDulces());
                         array_push($arrayRespuestasTmp, $c->getRspBebida());
                         array_push($arrayRespuestasTmp, $c->getRspComidaExtranjera());
+                        array_push($arrayRespuestasTmp, $id);
                         
-
-                }
-         echo "</div>";
-         echo "</table>"; 
-                
-               //echo "<h4>Objeto " . $RespuestasLogeado->getId(). "</h4>";
-               echo "<h4 Arreglo >" . $arrayRespuestasTmp[0] . "</h4>";
+                    }
                 foreach ($RespuestasCollectorObj->showRespuestas() as $c){
-
+                    $datosPersona = $PersonaCollectorObj->showPersonasId($c->getIdUsuario());
+                    //echo "***** DATOS PERSONA ***** " . $datosPersona->getNombre()."<br>" ;
                      $nroCoincidencias = 0;
+                    //MODIFICAR AQUI PARA VER RESPUESTAS DEL MISMO USUARIO PARA EL TESTING
                     if($arrayRespuestasTmp[11] != $c->getIdUsuario()){ //Valida que no sean las respuestas del usuario logeado
-                        echo "contadorrrr " . $nroCoincidencias ."<br>";
+                        //echo "contadorrrr " . $nroCoincidencias ."<br>";
                                if($arrayRespuestasTmp[0] == $c->getRspPreferencia()){ //Comparar las respuestas para sumar coincidencias en preguntas
                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[1] == $c->getRspDesayunoSalado()){
                                   $nroCoincidencias = $nroCoincidencias + 1;  
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                } 
                                if($arrayRespuestasTmp[2] == $c->getRspDesayunoDulce()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[3] == $c->getRspAlmuerzo()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[4] == $c->getRspCena()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[5] == $c->getRspComidaTipica()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[6] == $c->getRspCarnes()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[7] == $c->getRspPostres()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[8] == $c->getRspSaboresDulces()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[9] == $c->getRspBebida()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                }  
                                if($arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
                                    $nroCoincidencias = $nroCoincidencias + 1;
-                                   echo " Sumando + 1 ";
+                                   //echo " Sumando + 1 ";
                                } 
                        }
                         //echo "Coinciden <br>";
                     if($nroCoincidencias > 0){
                         array_push($arrayCoincidencias, $c);
                         array_push($arrayCoincidenciasPreguntas, $nroCoincidencias);
-                        echo "Posible pareja " .$c->getIdRespuesta()." con aciertos: " . $nroCoincidencias . "<br>";
+                        //echo "Posible pareja " .$c->getIdRespuesta()." con aciertos: " . $nroCoincidencias . "<br>";
 
                     }else{
-                        echo "No se encontraron coincidencias con este usuario = " . $c->getIdRespuesta() . "<br>";
+                        //echo "No se encontraron coincidencias con este usuario = " . $c->getIdRespuesta() . "<br>";
                     }
                     
                     }
@@ -238,23 +150,24 @@ if (!isset($_SESSION['usuario'])){
          ?>
                 <div class ='titulo'><h1>¡Tus posibles parejas de comida ideal!</h1></div>
                     <div class='centrar2'>
-                        <table id='customers'>
+                        <table id="customers" class="descendente">
                             <tr>
                                 
                                 <th>Nombre</th>
                                 <th>ID</th>
-                                <th>Nro Coincidencias</th>
+                                <th name="orden">Nro Coincidencias</th>
                                 <th>Contacto</th>
                             </tr>
             <?php
                 $count = 0;
                 foreach ($arrayCoincidencias as $coincidencia){
+                    $datosPersona2 = $PersonaCollectorObj->showPersonasId($coincidencia->getIdUsuario());
                     echo "<tr>";
                    
                     echo "<td>". $coincidencia->getUsuario() ."</td>";
                     echo "<td>". $coincidencia->getIdUsuario() ."</td>";
-                    echo "<td>". $arrayCoincidenciasPreguntas[$count] ."</td>";
-                    echo "<td>". " contacto " ."</td>";
+                    echo "<td name='orden'>". $arrayCoincidenciasPreguntas[$count] ."</td>";
+                    echo "<td>" .$datosPersona2->getContacto() ."</td>";
                     
                     echo "</tr>";
                     $count = $count +1;
@@ -263,12 +176,50 @@ if (!isset($_SESSION['usuario'])){
                 ?>
          </div>
          </table> 
+          <button id="ordenadito" onclick="ordenar()" class="esconder">Ordenar Tabla</button> 
 
-            </table>
+
     </div>
           
    
 </body>
+<script>
+    function ordenar(){
+         var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementsByClassName("descendente")[0];
+          switching = true;
+          /*Make a loop that will continue until
+          no switching has been done:*/
+          while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.getElementsByTagName("TR");
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                          //start by saying there should be no switching:
+                          shouldSwitch = false;
+                          /*Get the two elements you want to compare,
+                          one from current row and one from the next:*/
+                          x = rows[i].getElementsByTagName("TD")[2];
+                          y = rows[i + 1].getElementsByTagName("TD")[2];
+                          //check if the two rows should switch place:
+                          if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                                //if so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;s
+                          }
+                    }
+                    if (shouldSwitch) {
+                          /*If a switch has been marked, make the switch
+                          and mark that a switch has been done:*/
+                          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                          switching = true;
+                    }
+          }
+    }
+</script>
+
 </html>
 <?php
 }

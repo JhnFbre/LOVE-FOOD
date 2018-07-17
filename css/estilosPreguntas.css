@@ -475,3 +475,7 @@ transition: all 0.3s ease;
 .row{
     margin: 15px 0;
 }
+
+.esconder{
+    display: block;
+}
