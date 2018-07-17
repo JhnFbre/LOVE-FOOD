@@ -88,50 +88,49 @@ if (!isset($_SESSION['usuario'])){
                     //MODIFICAR AQUI PARA VER RESPUESTAS DEL MISMO USUARIO PARA EL TESTING
                     if($arrayRespuestasTmp[11] != $c->getIdUsuario()){ //Valida que no sean las respuestas del usuario logeado
                         //echo "contadorrrr " . $nroCoincidencias ."<br>";
-                               if($arrayRespuestasTmp[0] == $c->getRspPreferencia()){ //Comparar las respuestas para sumar coincidencias en preguntas
-                                  $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[1] == $c->getRspDesayunoSalado()){
-                                  $nroCoincidencias = $nroCoincidencias + 1;  
-                                   //echo " Sumando + 1 ";
-                               } 
-                               if($arrayRespuestasTmp[2] == $c->getRspDesayunoDulce()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[3] == $c->getRspAlmuerzo()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[4] == $c->getRspCena()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[5] == $c->getRspComidaTipica()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[6] == $c->getRspCarnes()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[7] == $c->getRspPostres()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[8] == $c->getRspSaboresDulces()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[9] == $c->getRspBebida()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               }  
-                               if($arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
-                                   $nroCoincidencias = $nroCoincidencias + 1;
-                                   //echo " Sumando + 1 ";
-                               } 
+                               if($arrayRespuestasTmp[0] == $datosPersona->getSexo()){ //Comparar si la preferencia va acorde con el sexo del row de la persona
+                                 
+                                       if($arrayRespuestasTmp[1] == $c->getRspDesayunoSalado()){ //Contabilizar respuestas acertadas para el match
+                                          $nroCoincidencias = $nroCoincidencias + 1;  
+                                           //echo " Sumando + 1 ";
+                                       } 
+                                       if($arrayRespuestasTmp[2] == $c->getRspDesayunoDulce()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[3] == $c->getRspAlmuerzo()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[4] == $c->getRspCena()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[5] == $c->getRspComidaTipica()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[6] == $c->getRspCarnes()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[7] == $c->getRspPostres()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[8] == $c->getRspSaboresDulces()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[9] == $c->getRspBebida()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       }  
+                                       if($arrayRespuestasTmp[10] == $c->getRspComidaExtranjera()){
+                                           $nroCoincidencias = $nroCoincidencias + 1;
+                                           //echo " Sumando + 1 ";
+                                       } 
+                                }
                        }
                         //echo "Coinciden <br>";
                     if($nroCoincidencias > 0){
