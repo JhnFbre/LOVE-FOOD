@@ -68,7 +68,7 @@ $b=$_SESSION['id'];;
            
            <br><br><br><a href="nuevoUsuario.php">Crear usuario</a>
            <br><br><br><a href="verUsuarios.php">Ver Usuarios</a>
-           <br><br><br><a href="verPreguntas2.php">Ver Preguntas</a>
+           <br><br><br><a href="verPreguntas.php">Ver Preguntas</a>
         </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>

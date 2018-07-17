@@ -38,10 +38,10 @@ class Respuestas
        
      }
     
-     function setId($id){
+     function setIdRespuesta($id){
        $this->id = $id;
      } 
-     function getId(){
+     function getIdRespuesta(){
        return $this->id;
      }  
      function setIdUsuario($idUsuario){
