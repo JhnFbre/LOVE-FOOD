@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])){
         }else{
             $nombre = $_SESSION['nombre'];
 
-            include_once("modelo/persona/PersonaCollector.php");
+            include_once("modelo/PersonaCollector.php");
 
             $PersonaCollectorObj = new PersonaCollector();
 ?>

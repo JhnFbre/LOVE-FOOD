@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("modelo/preguntas/RespuestasCollector.php");
+include_once("modelo/RespuestasCollector.php");
 
 $usuario = $_POST['nombre'];
 $apellido = $_POST['apellido'];

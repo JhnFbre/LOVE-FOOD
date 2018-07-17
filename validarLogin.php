@@ -1,5 +1,5 @@
 <?php
-include_once("paginas/modelo/persona/PersonaCollector.php");
+include_once("paginas/modelo/PersonaCollector.php");
 session_start();
 $usuario = $_POST['user'];
 $clave = $_POST['password'];

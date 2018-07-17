@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("modelo/persona/PersonaCollector.php");
+include_once("modelo/PersonaCollector.php");
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];

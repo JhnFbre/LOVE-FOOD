@@ -10,8 +10,8 @@ if (!isset($_SESSION['usuario'])){
             $id = $_SESSION['id'];
             ?>
             <?php
-            include_once("modelo/preguntas/RespuestasCollector.php");
-            include_once("modelo/persona/PersonaCollector.php");
+            include_once("modelo/RespuestasCollector.php");
+            include_once("modelo/PersonaCollector.php");
 
             $RespuestasCollectorObj = new RespuestasCollector();
             $PersonaCollectorObj = new PersonaCollector();
@@ -161,12 +161,12 @@ if (!isset($_SESSION['usuario'])){
                 $count = 0;
                 foreach ($arrayCoincidencias as $coincidencia){
                     $datosPersona2 = $PersonaCollectorObj->showPersonasId($coincidencia->getIdUsuario());
-                    echo "<tr>";
+                    echo "<tr id='ocultar'>";
                    
-                    echo "<td>". $coincidencia->getUsuario() ."</td>";
-                    echo "<td>". $coincidencia->getIdUsuario() ."</td>";
-                    echo "<td name='orden'>". $arrayCoincidenciasPreguntas[$count] ."</td>";
-                    echo "<td>" .$datosPersona2->getContacto() ."</td>";
+                    echo "<td id=''>". $coincidencia->getUsuario() ."</td>";
+                    echo "<td id=''>". $coincidencia->getIdUsuario() ."</td>";
+                    echo "<td id=''>". $arrayCoincidenciasPreguntas[$count] ."</td>";
+                    echo "<td id=''>" .$datosPersona2->getContacto() ."</td>";
                     
                     echo "</tr>";
                     $count = $count +1;
@@ -180,10 +180,11 @@ if (!isset($_SESSION['usuario'])){
 
     </div>
           
-   
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </body>
 <script>
     function ordenar(){
+        
          var table, rows, switching, i, x, y, shouldSwitch;
           table = document.getElementsByClassName("descendente")[0];
           switching = true;
@@ -216,7 +217,32 @@ if (!isset($_SESSION['usuario'])){
                           switching = true;
                     }
           }
+        topFiveMatch();
     }
+    function topFiveMatch(){
+        
+//        alert("recorriendo");
+//        
+//        var contador = 1;
+//        contador = contador + 1;
+//        alert ("contador " + contador);
+        //alert($(".descendente"));
+        console.log($(".descendente").childNodes;
+//        $(".descendente").find("row").each(function(){
+//            alert("aden");
+//        
+//        });
+//        var table = document.getElementById("customers");
+//        console.log("s"+table.rows.length);
+//        for(let i =2; i< table.rows.length;i++){
+//             
+//            //table.deleteRow(i);
+//        }
+//
+
+    }
+    
+    
 </script>
 
 </html>

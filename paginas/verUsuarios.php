@@ -4,7 +4,7 @@ if (!isset($_SESSION['usuario'])){
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
         }else{
             $nombre = $_SESSION['nombre'];
-            include_once("modelo/persona/PersonaCollector.php");
+            include_once("modelo/PersonaCollector.php");
 
             $PersonaCollectorObj = new PersonaCollector();
 ?>

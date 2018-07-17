@@ -1,7 +1,7 @@
 <?php
 
 include_once('Respuestas.php');
-include_once("modelo/collector.php");
+include_once("collector.php");
 
 class RespuestasCollector extends collector
 {
@@ -11,7 +11,7 @@ class RespuestasCollector extends collector
     ##echo "linea 1";
     $arrayRespuestas= array();        
     foreach ($rows as $c){
-      $aux = new Respuestas($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+      $aux = new Respuestas($c{'id'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
       array_push($arrayRespuestas, $aux);
     }
     return $arrayRespuestas;     
@@ -23,7 +23,7 @@ class RespuestasCollector extends collector
     ##echo "linea 1";
     $arrayRespuestas= array();        
     foreach ($rows as $c){
-      $aux = new Respuestas($c{'iduser'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
+      $aux = new Respuestas($c{'id'},$c{'idusuario'},$c{'usuario'},$c{'rsppreferencia'},$c{'rspdesayunosalado'},$c{'rspdesayunodulce'},$c{'rspalmuerzo'},$c{'rspcena'},$c{'rspcomidatipica'},$c{'rspcarnes'},$c{'rsppostres'},$c{'rspsaboresdulces'},$c{'rspbebida'},$c{'rspcomidaextranjera'});
       array_push($arrayRespuestas, $aux);
     }
     return $arrayRespuestas;     
@@ -47,5 +47,15 @@ class RespuestasCollector extends collector
       
          $rows = self::$db->insertRow("UPDATE usuario SET nombre='$nombre' , apellido='$apellido' , email='$email' , usuario='$usuario' , clave='$clave' WHERE id_persona='$id'" ,null);
     }*/
+    
+    /*
+Notice: Undefined offset: 11 in /var/www/html/LOVE-FOOD/paginas/verPreguntas.php on line 89
+
+Notice: Undefined offset: 0 in /var/www/html/LOVE-FOOD/paginas/verPreguntas.php on line 91
+
+Notice: Undefined offset: 11 in /var/www/html/LOVE-FOOD/paginas/verPreguntas.php on line 89
+
+Notice: Undefined offset: 0 in /var/www/html/LOVE-FOOD/paginas/verPreguntas.php on line 91
+*/
 }
 ?>

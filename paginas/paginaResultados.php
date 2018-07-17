@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("modelo/preguntas/RespuestasCollector.php");
+include_once("modelo/RespuestasCollector.php");
 $RespuestasCollectorObj = new RespuestasCollector();
 
 $b=$_SESSION['id'];;
@@ -25,8 +25,9 @@ $b=$_SESSION['id'];;
     <title>LOVE FOOD</title>
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-      <link rel="stylesheet" href="../css/estilo2.css">
+
           <link rel="stylesheet" href="../css/estilosPreguntas.css">
+          <link rel="stylesheet" href="../css/estilo2.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -75,6 +76,9 @@ $b=$_SESSION['id'];;
 </head>
 <body>
     <div class="barra">  
+        <?php  
+        echo '<h4>'.$nombre.'</h4>'
+            ?>  
         <hr>
         <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
