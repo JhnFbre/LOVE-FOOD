@@ -23,9 +23,10 @@ $b=$_SESSION['id'];;
 <head>
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
-    <link rel="stylesheet" href="../css/estilosPreguntas.css">
+
     <link rel="stylesheet" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="../css/estilo2.css">
+          <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -78,7 +79,7 @@ $b=$_SESSION['id'];;
         <div class="menu" id="ocultar" style="display: none;">
             <a href="nuevoUsuario.php">Crear usuario</a>
            <a href="verUsuarios.php">Ver Usuarios</a>
-           <a href="verPreguntas2.php">Ver Preguntas</a>
+           <a href="verPreguntas.php">Ver Preguntas</a>
         </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
