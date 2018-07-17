@@ -34,6 +34,7 @@ $PersonaCollectorObj = new PersonaCollector();
                 $_SESSION['nombre']= $c->getNombre();
                 $_SESSION['apellido']= $c->getApellido();
                 $_SESSION['id']= $c->getIdPersona();
+                $_SESSION['sexo']= $c->getSexo();
                  
 		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginas/paginaPreguntas.php'>";
                 

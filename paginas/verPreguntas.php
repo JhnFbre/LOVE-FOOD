@@ -8,6 +8,7 @@ if (!isset($_SESSION['usuario'])){
             $apellido = $_SESSION['apellido'];
             $usuario = $_SESSION['usuario'];
             $id = $_SESSION['id'];
+            $sexo = $_SESSION['sexo'];
             ?>
             <?php
             include_once("modelo/RespuestasCollector.php");
@@ -88,7 +89,7 @@ if (!isset($_SESSION['usuario'])){
                     //MODIFICAR AQUI PARA VER RESPUESTAS DEL MISMO USUARIO PARA EL TESTING
                     if($arrayRespuestasTmp[11] != $c->getIdUsuario()){ //Valida que no sean las respuestas del usuario logeado
                         //echo "contadorrrr " . $nroCoincidencias ."<br>";
-                               if($arrayRespuestasTmp[0] == $datosPersona->getSexo()){ //Comparar si la preferencia va acorde con el sexo del row de la persona
+                               if($arrayRespuestasTmp[0] == $datosPersona->getSexo() && $sexo == $c->getRspPreferencia()){ //Comparar si la preferencia va acorde con el sexo del row de la persona
                                  
                                        if($arrayRespuestasTmp[1] == $c->getRspDesayunoSalado()){ //Contabilizar respuestas acertadas para el match
                                           $nroCoincidencias = $nroCoincidencias + 1;  
@@ -174,8 +175,7 @@ if (!isset($_SESSION['usuario'])){
                 }
                 ?>
          </div>
-         </table> 
-          <button id="ordenadito" onclick="ordenar()" class="esconder">Ordenar Tabla</button> 
+         </table>
 
 
     </div>
@@ -220,29 +220,12 @@ if (!isset($_SESSION['usuario'])){
         topFiveMatch();
     }
     function topFiveMatch(){
-        
-//        alert("recorriendo");
-//        
-//        var contador = 1;
-//        contador = contador + 1;
-//        alert ("contador " + contador);
-        //alert($(".descendente"));
-        console.log($(".descendente").childNodes;
-//        $(".descendente").find("row").each(function(){
-//            alert("aden");
-//        
-//        });
-//        var table = document.getElementById("customers");
-//        console.log("s"+table.rows.length);
-//        for(let i =2; i< table.rows.length;i++){
-//             
-//            //table.deleteRow(i);
-//        }
-//
-
+        $(".descendente tr").each(function(i,data){
+            if(i>5){
+               data.remove();
+            }
+        });
     }
-    
-    
 </script>
 
 </html>
