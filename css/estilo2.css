@@ -221,7 +221,7 @@ button:hover{
 .crear{font-style: oblique;font-family: Myriad Pro}
 
 
-@media (min-width:100px) and (max-width: 500px) {
+@media only screen and (max-device-width: 600px){
     .logoB{
         display: none;
     }

@@ -230,7 +230,7 @@ button:hover{
 .crear{font-style: oblique;font-family: Myriad Pro}
 
 
-@media (min-width:100px) and (max-width: 500px) {
+@media only screen and (max-device-width: 600px) {
     .logoB{
         display: none;
     }
@@ -525,7 +525,7 @@ transition: all 0.3s ease;
     padding-bottom: 5%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-device-width: 600px) {
     
     .divRsp{
         margin-top: 20%;
@@ -538,10 +538,8 @@ transition: all 0.3s ease;
         padding-top: 45%
 }
 }
-@media only screen and (max-width: 500px) {
-    .container{
-        padding-top: 20%
-    }
+@media only screen and (max-device-width: 600px) {
+
     .divRsp{
         margin-top: 10%;
         width: 100%;
