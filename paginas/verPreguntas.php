@@ -185,20 +185,42 @@ if (!isset($_SESSION['usuario'])){
                       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                       <li data-target="#myCarousel" data-slide-to="1"></li>
                       <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                      <li data-target="#myCarousel" data-slide-to="4"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                      <div class="item active">
-                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="Los Angeles" style="width:100%;">
+                    <div class="carousel-inner" id="sliderRsps">
+                      <div id="rsp1" class="item active">
+                      <img src="" alt="">
+                      <h1></h1>
+                      <p></p>
                       </div>
 
-                      <div class="item">
-                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="Chicago" style="width:100%;">
+                      <div id="rsp2" class="item">
+                      <img src="" alt="">
+                      <h1></h1>
+                      <p></p>
                       </div>
 
-                      <div class="item">
-                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="New york" style="width:100%;">
+                      <div id="rsp3" class="item">
+                      <img src="" alt="">
+                      <h1></h1>
+                      <p></p>
+                      </div>
+                      
+                      <div id="rsp4" class="item">
+                      
+                      <img src="" alt="">
+                      <h1></h1>
+                      <p></p>
+                      </div>
+                      
+                      <div id="rsp5" class="item">
+                      
+                      <img src="" alt="">
+                      <h1></h1>
+                      <p></p>
                       </div>
                     </div>
 
@@ -254,12 +276,22 @@ if (!isset($_SESSION['usuario'])){
                     }
           }
         topFiveMatch();
+        llenarSlider();
     }
     function topFiveMatch(){
         $(".descendente tr").each(function(i,data){
             if(i>5){
                data.remove();
             }
+        });
+    }
+    function llenarSlider(){
+        console.log($("#sliderRsps div"));
+        $("#sliderRsps div").each(function(i,data){
+            console.log($(".descendente tr")[i+1].firstElementChild);
+            data.children[0].setAttribute("src","http://www.elrincondesonia.com/wp-content/uploads/2013/05/imagn-6.jpg");
+            data.children[1].innerHTML=$(".descendente tr")[i+1].firstElementChild.innerHTML;
+            data.children[2].innerHTML=$(".descendente tr")[i+1].lastElementChild.innerHTML;
         });
     }
 	

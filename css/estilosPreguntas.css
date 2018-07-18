@@ -265,6 +265,7 @@ button:hover{
         position: absolute;
         width: 100%;
     }
+    
 }
 
 .jiterry span{font:400 80px/1em Amatic SC; animation:jitter 200ms linear infinite;color:#f06d06;display:inline-block}
@@ -485,4 +486,26 @@ transition: all 0.3s ease;
 
 .descendente{
     display: none;
+}
+
+
+.divRsp{
+    width: 60%;
+    height: 60%;
+}
+.item{
+    background-color: red;
+}
+.item img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    
+    .divRsp{
+        margin-top: 20%;
+        margin-left: 10%;
+        width: 90%;
+        height: 60%;
+    }
 }
