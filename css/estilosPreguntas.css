@@ -230,7 +230,7 @@ button:hover{
 .crear{font-style: oblique;font-family: Myriad Pro}
 
 
-@media only screen and (max-width: 900px) {
+@media (min-width:100px) and (max-width: 500px) {
     .logoB{
         display: none;
     }
@@ -490,22 +490,101 @@ transition: all 0.3s ease;
 
 
 .divRsp{
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 80%;
 }
 .item{
-    background-color: red;
+    background-color: transparent;
 }
 .item img{
-    width: 100%;
+    width: 70%;
+    padding-left: 35%;
+    padding-top: 20px;
+}
+.item h1{
+    font-size: 50px;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    padding-left: 7%;
+    
+}
+.item p{
+    font-size: 25px;
+    padding-left: 7%;
+}
+.slider{
+    text-align: center;
+    padding-left: 20%;
+    padding-top: 5%
+}
+.frase{
+    font-size: 50px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-style: italic;
+    padding-left: 7%;
+    color: tomato;
+    padding-bottom: 5%;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
     
     .divRsp{
         margin-top: 20%;
-        margin-left: 10%;
-        width: 90%;
-        height: 60%;
+        width: 100%;
+        height: 80%;
     }
+    .slider{
+        text-align: center;
+        padding-left: 0px;
+        padding-top: 45%
+}
+}
+@media only screen and (max-width: 500px) {
+    .container{
+        padding-top: 20%
+    }
+    .divRsp{
+        margin-top: 10%;
+        width: 100%;
+        height: 80%;
+    }
+    .slider{
+        text-align: center;
+        padding-left: 0px;
+        padding-top: 45%
+}
+    .frase{
+    font-size: 50px;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    font-style: italic;
+    padding-left: 7%;
+    color: tomato;
+    padding-bottom: 1%;
+    padding-top: 25%;
+    
+    }
+    .barra{
+        position: absolute;
+        width: 100%;
+        margin-bottom: 15px;
+        padding-top: 0;
+        height: 300
+    .centrar2{
+        margin: 20% 0 0 0;
+    }
+}
+.carousel-control{
+    background-color:wheat;
+    opacity: 0.2;
+}
+.carousel-control:hover{
+    background-color: wheat;
+    opacity: 0.5;
+}
+.carousel-control a:after{
+    background-color: #e9c85d;
+    opacity: 0.5;
+}
+.carousel-control a:active{
+    background-color: #e9c85d;
+    opacity: 0.5;
 }

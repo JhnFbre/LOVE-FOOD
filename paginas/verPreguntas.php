@@ -29,12 +29,13 @@ if (!isset($_SESSION['usuario'])){
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="../css/estilo2.css">
-          <link rel="stylesheet" href="../css/estilosPreguntas.css">
+          
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -48,13 +49,13 @@ if (!isset($_SESSION['usuario'])){
 </head>
 <body onload="ordenar()">
     <div class="barra">  
-       
-        <hr>
-        <div class="menu">
+       <div class="menu">
            <?php  
             echo '<h2>'.$nombre.'</h2>'
             ?>
         </div>
+        <hr>
+        
         
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
@@ -151,8 +152,8 @@ if (!isset($_SESSION['usuario'])){
                     
                 
          ?>
-                <div class ='titulo'><h1>¡Tus posibles parejas de comida ideal!</h1></div>
-                    <div class='centrar2'>
+                
+                    <div class='slider'>
                         <table id="customers" class="descendente">
                             <tr>
                                 
@@ -179,15 +180,10 @@ if (!isset($_SESSION['usuario'])){
                 ?>
          </table>
              <div class="container">
+                 <div class="frase"><h1>¡Porque con la comida siempre se triunfa!</h1></div>
                   <div id="myCarousel" class="carousel slide divRsp" data-ride="carousel">
                     <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                      <li data-target="#myCarousel" data-slide-to="1"></li>
-                      <li data-target="#myCarousel" data-slide-to="2"></li>
-                      <li data-target="#myCarousel" data-slide-to="3"></li>
-                      <li data-target="#myCarousel" data-slide-to="4"></li>
-                    </ol>
+                    
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" id="sliderRsps">
@@ -234,7 +230,9 @@ if (!isset($_SESSION['usuario'])){
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
+                  
                 </div>
+               
 
         </div>
           
@@ -288,8 +286,42 @@ if (!isset($_SESSION['usuario'])){
     function llenarSlider(){
         console.log($("#sliderRsps div"));
         $("#sliderRsps div").each(function(i,data){
-            console.log($(".descendente tr")[i+1].firstElementChild);
-            data.children[0].setAttribute("src","http://www.elrincondesonia.com/wp-content/uploads/2013/05/imagn-6.jpg");
+            console.log($(".descendente tr")[i+1].children[2].innerHTML);
+            switch($(".descendente tr")[i+1].children[2].innerHTML) {
+                case "10":
+                    data.children[0].setAttribute("src","../images/100.png");
+                    break;
+                case "9":
+                    data.children[0].setAttribute("src","../images/90.png");
+                    break;
+                case "8":
+                    data.children[0].setAttribute("src","../images/80.png");
+                    break;
+                case "7":
+                    data.children[0].setAttribute("src","../images/70.png");
+                    break;
+                case "6":
+                    data.children[0].setAttribute("src","../images/60.png");
+                    break;
+                case "5":
+                    data.children[0].setAttribute("src","../images/50.png");
+                    break;
+                case "4":
+                    data.children[0].setAttribute("src","../images/40.png");
+                    break;
+                case "3":
+                    data.children[0].setAttribute("src","../images/30.png");
+                    break;
+                case "2":
+                    data.children[0].setAttribute("src","../images/20.png");
+                    break;
+                case "1":
+                    data.children[0].setAttribute("src","../images/10.png");
+                    break;
+                default:
+                    data.children[0].setAttribute("src","../images/corazones.gif");
+            }
+            
             data.children[1].innerHTML=$(".descendente tr")[i+1].firstElementChild.innerHTML;
             data.children[2].innerHTML=$(".descendente tr")[i+1].lastElementChild.innerHTML;
         });
