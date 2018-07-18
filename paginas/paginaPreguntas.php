@@ -17,7 +17,7 @@ $b=$_SESSION['id'];;
            
            foreach ($RespuestasCollectorObj->showRespuestas() as $c){
                         if  ($c->getIdUsuario() == $b) {
-                            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=paginaResultados.php'>";
+                            echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=verPreguntas.php'>";
                         }
                 }
 ?>
@@ -313,7 +313,7 @@ $b=$_SESSION['id'];;
         
         validarUsuario();
         function validarUsuario(){
-            if($user == "ymsantan" ||$user == "jpvalle"||$user =="gpaort"){
+            if($user == "jpvalle"){
                  $('#ocultar').css('display', 'block');
                 //$("#ocultar").css("display", "block");
             }

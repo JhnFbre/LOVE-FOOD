@@ -3,6 +3,9 @@ session_start();
 if (!isset($_SESSION['usuario'])){
             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>"; //Redireccion al index sin sesion
         }else{
+            if($_SESSION['usuario']!="jpvalle"){
+                echo "<meta HTTP-EQUIV='REFRESH' CONTENT='0.5;URL=../index.php'>"; //Redireccion al index sin sesion
+            }else{
             $nombre = $_SESSION['nombre'];
             include_once("modelo/PersonaCollector.php");
 
@@ -19,7 +22,7 @@ if (!isset($_SESSION['usuario'])){
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo2.css">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -91,5 +94,5 @@ if (!isset($_SESSION['usuario'])){
 </body>
 </html>
 <?php
-}       
+}    }   
 ?>

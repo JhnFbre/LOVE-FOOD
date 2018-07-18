@@ -245,6 +245,9 @@ button:hover{
         padding-top: 90%;
         padding-left: 7%;
     }
+    .centrar2{
+        margin: 20% 0 0 0;
+    }
     .placePreguntas, .placePreguntas h2, .placePreguntas h4{
         padding-left: 0px !important;
         
@@ -478,4 +481,8 @@ transition: all 0.3s ease;
 
 .esconder{
     display: block;
+}
+
+.descendente{
+    display: none;
 }

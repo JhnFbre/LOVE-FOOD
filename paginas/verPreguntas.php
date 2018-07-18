@@ -32,7 +32,9 @@ if (!isset($_SESSION['usuario'])){
           <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilo.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -46,11 +48,12 @@ if (!isset($_SESSION['usuario'])){
 </head>
 <body onload="ordenar()">
     <div class="barra">  
-       <?php  
-        echo '<h4>'.$nombre.'</h4>'
+       
+        <hr>
+        <div class="menu">
+           <?php  
+            echo '<h2>'.$nombre.'</h2>'
             ?>
-        <hr><div class="menu">
-           <a href="nuevoUsuario.php">Crear Usuario</a>
         </div>
         
         <div class="salirSesion">
@@ -174,13 +177,46 @@ if (!isset($_SESSION['usuario'])){
                     //echo "Esta persona tiene tus mismos gustos " . $coincidencia->getUsuario() ." con el ID: " . $coincidencia->getId(). "<br>";
                 }
                 ?>
-         </div>
          </table>
+             <div class="container">
+                  <div id="myCarousel" class="carousel slide divRsp" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="Los Angeles" style="width:100%;">
+                      </div>
 
-    </div>
+                      <div class="item">
+                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="Chicago" style="width:100%;">
+                      </div>
+
+                      <div class="item">
+                        <img src="http://image.blingee.com/images15/content/output/000/000/000/4d0/346599839_520803.gif" alt="New york" style="width:100%;">
+                      </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+
+        </div>
           
-     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     
 </body>
 <script>
     function ordenar(){
@@ -226,6 +262,7 @@ if (!isset($_SESSION['usuario'])){
             }
         });
     }
+	
 </script>
 
 </html>
