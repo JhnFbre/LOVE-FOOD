@@ -41,9 +41,9 @@ if (!isset($_SESSION['usuario'])){
           <div class="row">
              <div class="col-xs-3">
              
-              <br><a href="verUsuarios.php">Ver usuarios</a>
+                    <br><a href="verUsuarios.php">Ver usuarios</a>
               </div>
-              </div>
+            </div>
           
            
         </div>

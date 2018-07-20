@@ -18,11 +18,11 @@ if (!isset($_SESSION['usuario'])){
 <head>
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
+    
     <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="../css/estilo2.css">
     <script type="text/javascript">
         //auto expand textarea
         function adjust_textarea(h) {
@@ -39,18 +39,23 @@ if (!isset($_SESSION['usuario'])){
        <?php  
         echo '<h4>'.$nombre.'</h4>'
             ?>
-        <hr><div class="menu">
+        <hr>
+        <div class="menu">
            <br><a href="nuevoUsuario.php">Crear Usuario</a>
         </div>
         
+        <div class="logoCell">
+            <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
+        </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
         </div>
-        <div class="espacioLogo">
+        <div class="logoPc">
             <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
         </div>
+        
     </div>
-    
+    <div class="row">
     <div class="titulo"><h1>Lista de Usuarios</h1></div>
    <div class="centrar2">
      <table id="customers">
@@ -89,6 +94,7 @@ if (!isset($_SESSION['usuario'])){
 
             </table>
     </div>
+         </div>
           
    
 </body>
