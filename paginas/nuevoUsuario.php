@@ -38,13 +38,23 @@ if (!isset($_SESSION['usuario'])){
             ?>
         <hr>
         <div class="menu">
-           <br><a href="verUsuarios.php">Ver usuarios</a>
+          <div class="row">
+             <div class="col-xs-3">
+             
+              <br><a href="verUsuarios.php">Ver usuarios</a>
+              </div>
+              </div>
+          
+           
         </div>
         
+        <div class="logoCell">
+            <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
+        </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
         </div>
-        <div class="espacioLogo">
+        <div class="logoPc">
             <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
         </div>
     </div>

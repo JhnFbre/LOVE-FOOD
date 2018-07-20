@@ -28,8 +28,9 @@ $b=$_SESSION['id'];;
 <head>
     <meta charset="UTF-8">
     <title>LOVE FOOD</title>
-    <link rel="stylesheet" href="../css/estilosPreguntas.css">
+    
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -62,23 +63,39 @@ $b=$_SESSION['id'];;
 </head>
 <body>
     <div class="barra">  
-       
+       <?php  
+        echo '<h4>'.$nombre.'</h4>'
+        ?> 
         <hr>
         <div class="menu" id="ocultar" style="display: none;">
+          <div class="row" id="centrar">
+               <div class="col-xs-3">
+                <a href="nuevoUsuario.php">Crear usuario</a>
+               </div>
+               <div class="col-xs-3">
+                   <a href="verUsuarios.php">Ver Usuarios</a>
+               </div>
+
+               <div class="col-xs-3">
+                   <a href="verPreguntas.php">Ver Preguntas</a>
+               </div>
+
+           </div>
            
-           <br><br><br><a href="nuevoUsuario.php">Crear usuario</a>
-           <br><br><br><a href="verUsuarios.php">Ver Usuarios</a>
-           <br><br><br><a href="verPreguntas.php">Ver Preguntas</a>
+        </div>
+        <div class="logoCell">
+            <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
         </div>
         <div class="salirSesion">
             <a href="../logout.php">Salir</a>
         </div>
-        <div class="espacioLogo">
+        <div class="logoPc">
             <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
         </div>
     </div>
     <div class="placePreguntas">
         <h2><span class="jiterry">Preguntas</span></h2>
+        <br>
         
         <form method="post" action="guardarRespuestas.php">
             
@@ -86,7 +103,7 @@ $b=$_SESSION['id'];;
             <div><input type="hidden" name="apellido" value="<?php echo $apellido;?>"></div>
             <div><input type="hidden" name="idusuario" value="<?php echo $id;?>"></div>
             
-            <h4>Preferencia</h4>
+            <h4>¡Elige lo que deseas conocer!</h4>
             <div class="row">
                 <div class="col-md-6">
                 <input type="radio" name="preferencia" value="hombre" required>Hombre<br>
