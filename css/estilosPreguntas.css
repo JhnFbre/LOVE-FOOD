@@ -89,6 +89,7 @@
     border-radius: 5px;
     color:#c90000;
     font-size: 20px;
+    text-decoration: none;
 }
 .form-style-7 input[type="submit"]:hover,
 .form-style-7 input[type="button"]:hover,.enviarPrg:hover{
@@ -96,6 +97,7 @@
     color:#FFF;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
     
 }
 .barra{
@@ -171,6 +173,15 @@ a{
     margin-left: 350px;
     margin-top: 0 auto;
     text-align: center;
+    
+}
+.placeImgEspera{
+    margin-left: 350px;
+    margin-top: 0 auto;
+    text-align: center;
+    
+}.placeImgEspera img{
+    width: 600px;
     
 }
 .placePreguntas a, .placePreguntas h2, .placePreguntas h4{
@@ -618,7 +629,7 @@ margin: 20px;
         margin: 20% 0 0 0;
     }
     .imgEspera{
-        width: 40%;
+        width: 100%;
     }
     .logoCell{
         display: block;
@@ -638,6 +649,7 @@ margin: 20px;
     text-align: center;
     
 }
+    
     .placePreguntas form{
     width: 100%;
     text-align: center;
@@ -659,6 +671,11 @@ margin: 20px;
     hr{
    border: 1px solid white;     
     }
+    .placeImgEspera{
+    padding-top: 45%;
+    margin-left: 5%;
+    
+}
     
 
 

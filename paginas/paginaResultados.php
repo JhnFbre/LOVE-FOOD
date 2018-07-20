@@ -26,8 +26,7 @@ $b=$_SESSION['id'];;
 
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-          <link rel="stylesheet" href="../css/estilosPreguntas.css">
-          <link rel="stylesheet" href="../css/estilo2.css">
+    <link rel="stylesheet" href="../css/estilosPreguntas.css">
     <link rel="icon" href="../images/logoPeque.png">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -92,9 +91,14 @@ $b=$_SESSION['id'];;
             <img src="../images/logoBlanco.png" alt="Logo Blanco LOVEFOOD" class="logoB">
         </div>
     </div>
+    
+   <div class="placeImgEspera">
     <div class="imgEspera">
-    <img src="../images/foto.jpg" alt=""><br><br>
+    <img src="../images/foto.jpg" class="esperando"alt=""><br><br>
     <h2>Muy pronto conocerás a tu pareja ideal..</h2>
+    <br>
+    <a class="enviarPrg" href="verPreguntas.php" >¡Conocer mi pareja comelona ahora!</a>
+    </div>
     </div>
     
     
